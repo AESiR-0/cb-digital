@@ -10,7 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         background: "var(--background)",
+        primary: "#151515",
         foreground: "var(--foreground)",
+      },
+      fontFamily: {
+        clash: "var(--font-clash)",
+        wig: "var(--font-wig)",
       },
     },
   },
