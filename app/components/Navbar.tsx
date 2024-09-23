@@ -45,7 +45,7 @@ export const Navbar = () => {
                 return (
                   <Link
                     key={index}
-                    className={`group font-clash font-bold transition-all ${
+                    className={`group font-clash font-black  transition-all ${
                       item.link === pathName ? "text-accent" : "text-secondary-4"
                     }`}
                     href={item.link}
