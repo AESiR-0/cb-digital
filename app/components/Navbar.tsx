@@ -40,7 +40,7 @@ export const Navbar = () => {
             </svg>
           </button>
           {isOpen && (
-            <div className="bg-secondary fixed flex flex-col font-clash justify-center items-center overflow-hidden top-0 left-0 z-50">
+            <div className="bg-secondary fixed flex flex-col font-clash justify-center items-center overflow-hidden top-0 left-0 z-10">
               {navItems.map((item: nav, index: number) => {
                 return (
                   <Link
