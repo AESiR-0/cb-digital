@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Card from "../Cards";
+import Title from "../Title";
 import Card2 from "@/public/static/card/Card2.svg";
 import { RoundedButton } from "../Button";
 
@@ -15,8 +16,8 @@ export default function Hero({
 }) {
   return (
     <div className="w-screen h-[80vh] gap-48  flex items-center overflow-hidden ">
-      <div className=" w-[750px]  h-fit leading-none px-20 text-white font-clash text-[6.5rem] font-bold  uppercase">
-        <h1> {title}</h1>
+      <div className=" w-[750px]  h-fit leading-none px-20 text-white ">
+        <Title alignment="left" title={title} />
         <h5 className="text-[32px] normal-case my-3 tracking-wider font-clash font-semibold leading-none">
           {subheading}
         </h5>
@@ -32,7 +33,6 @@ export default function Hero({
           src={Card2}
         />
       </div>
-      
     </div>
   );
 }

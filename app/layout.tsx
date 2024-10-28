@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Footer from "./components/Footer";
+import {Navbar} from "./components/Navbar";
 
 const clashDisplay = localFont({
   src: "./fonts/Clash_Display/ClashDisplay-Variable.ttf",
-  variable:'--font-clash'
+  variable: "--font-clash",
 });
 
 const wiga = localFont({
   src: "./fonts/Wiga/Wiga-Regular.ttf",
-  variable:'--font-wig'
+  variable: "--font-wig",
 });
-
-
 
 export const metadata: Metadata = {
   title: "CB Digital ",
@@ -27,9 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${clashDisplay.variable} ${wiga.variable} bg-primary overflow-x-hidden  antialiased`}
+        className={`${clashDisplay.variable} ${wiga.variable}  scroll-smooth h-full relative z-0 bg-primary overflow-x-hidden  antialiased`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
