@@ -12,6 +12,7 @@ const config: Config = {
         background: "var(--background)",
         primary: "#151515",
         foreground: "var(--foreground)",
+        
       },
       fontFamily: {
         clash: "var(--font-clash)",
