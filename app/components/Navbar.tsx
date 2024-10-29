@@ -20,7 +20,7 @@ export const Navbar = () => {
   
     return (
       <>
-      <div className="w-screen items-center flex justify-between overflow-hidden px-5 md:px-20 h-20 bg-seconday-2">
+      <div className="w-screen items-center text-white  z-50  flex justify-between overflow-hidden px-5 md:px-20 h-20 bg-seconday-2">
         <div className="flex items-center justify-between w-full md:w-auto">
          <span className="font-wig text-4xl">CB</span>
           <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -67,7 +67,7 @@ export const Navbar = () => {
             return (
               <Link
                 key={index}
-                className={`group transition-all  ${
+                className={`group transition-all font-semibold  ${
                   item.link === pathName ? "text-accent" : "text-secondary-4"
                 }`}
                 href={item.link}

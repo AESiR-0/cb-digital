@@ -13,9 +13,9 @@ const workContent = [
 
 export default function OurWork() {
   return (
-    <div className="container">
+    <div className="w-screen bg-primary  px-20">
       <Title alignment="center" title="Our Work" />
-      <div className="flex font-clash px-24 w-full h-full">
+      <div className="flex max-md:px-10 max-md:flex-col  font-clash  w-full h-full">
         <div className="flex flex-col w-1/2 gap-3 text-left">
           <h1 className="text-3xl font-medium">Title</h1>
           <p className="font-thin text-xl">Category</p>
@@ -39,7 +39,7 @@ export default function OurWork() {
           />
         </div>
       </div>
-      <div className="flex font-clash px-24  w-full h-full">
+      <div className="flex max-md:px-10 max-md:flex-col  font-clash  w-full h-full">
         <div className="flex flex-col w-1/2 gap-3 text-left">
           <h1 className="text-3xl font-medium">Title</h1>
           <p className="font-thin text-xl">Category</p>

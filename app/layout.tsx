@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "./components/Footer";
-import {Navbar} from "./components/Navbar";
+import { Navbar } from "./components/Navbar";
 
 const clashDisplay = localFont({
   src: "./fonts/Clash_Display/ClashDisplay-Variable.ttf",
@@ -27,10 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${clashDisplay.variable} ${wiga.variable}  scroll-smooth h-full relative z-0 bg-primary overflow-x-hidden  antialiased`}
+        className={`${clashDisplay.variable} ${wiga.variable}  scroll-smooth h-full relative bg-primary  overflow-x-hidden  antialiased`}
       >
         <Navbar />
-        {children}
+        <div className=" h-full main relative z-20 bg-primary   text-white py-10 w-full border-b-transparent rounded-b-full">
+          {children}
+        </div>
+        <div className="h-[70vh] z-0   bg-transparent"></div>
         <Footer />
       </body>
     </html>

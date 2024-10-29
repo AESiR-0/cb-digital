@@ -6,9 +6,9 @@ import Testimonials from "./components/sections/Testimonials";
 
 export default function Home() {
   return (
-    <div className="h-full  w-full relative z-10">
+    <div className="h-full main relative z-20 bg-primary   text-white py-10 w-full ">
       <Hero
-        title={"Create. Edit. Deliver"}
+        title={"Create . Edit. Deliver ."}
         subheading={"We turn your dreams into reality."}
         body={
           "At CB Digital, we specialize in turning your vision into captivating Podcasts and Reels, with a fresh perspective and unmatched speed."
@@ -20,6 +20,7 @@ export default function Home() {
       <About />
       <OurWork />
       <Testimonials />
+    
     </div>
   );
 }

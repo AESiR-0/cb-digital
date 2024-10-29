@@ -6,8 +6,8 @@ import Title from "../Title";
 
 export default function About() {
   return (
-    <div>
-      <div className="container ">
+    <div className="bg-primary ">
+      <div className="container  ">
         <Title alignment="center" title={"About Us"} />
       </div>
       <div className="flex w-full  items-center justify-between">
@@ -19,7 +19,7 @@ export default function About() {
             src={CardBg}
             alt="Card Image"
           />
-          <div className="h-full  z-50">
+          <div className="h-full  z-20">
             <h1 className="text-center font-semibold font-clash text-3xl pt-10">
               What are we doing?
             </h1>
@@ -34,7 +34,7 @@ export default function About() {
             alt="Card Image"
           />
 
-          <div className="h-full flex flex-col justify-between z-50">
+          <div className="h-full flex flex-col justify-between z-20">
             <h1 className="font-clash text-center font-semibold text-3xl pt-10">
               How are we doing it ?
             </h1>
@@ -54,7 +54,7 @@ export default function About() {
             alt="Card Image"
           />
 
-          <div className="h-full flex flex-col justify-between z-50">
+          <div className="h-full flex flex-col justify-between z-20">
             <h1 className="font-clash text-center  font-semibold text-3xl pt-10">
               Why are we doing this?
             </h1>

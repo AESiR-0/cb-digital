@@ -13,9 +13,9 @@ export function RoundedButton({ text }: { text: string }) {
         e.preventDefault();
         setHover(false);
       }}
-      className={`scale-100 transition-all ${
+      className={`scale-100 bg-primary  transition-all ${
         hover ? "scale-95 opacity-90" : "opacity-100"
-      } relative border`}
+      } relative`}
     >
       <svg
         width="257"
@@ -31,7 +31,7 @@ export function RoundedButton({ text }: { text: string }) {
           style={{
             strokeDasharray: "600",
             strokeDashoffset: hover ? "600" : "0",
-            transition: "stroke-dashoffset 0.5s ease",
+            transition: "stroke-dashoffset 0.4s ease-in-out",
           }}
         />
       </svg>
@@ -40,7 +40,7 @@ export function RoundedButton({ text }: { text: string }) {
           hover ? "scale-95 opacity-90" : "scale-100 opacity-100"
         } top-7 left-16`}
       >
-        <button className="font-clash font-bold text-3xl uppercase">
+        <button className="font-clash font-bold text-white text-3xl uppercase">
           {text}
         </button>
       </div>

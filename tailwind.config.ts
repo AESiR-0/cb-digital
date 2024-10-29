@@ -11,8 +11,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         primary: "#151515",
+        secondary: "#1F1F21",
         foreground: "var(--foreground)",
-        
       },
       fontFamily: {
         clash: "var(--font-clash)",
