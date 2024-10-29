@@ -15,7 +15,7 @@ export default function About() {
           <Image
             height={500}
             width={400}
-            className="absolute"
+            className="absolute  "
             src={CardBg}
             alt="Card Image"
           />
@@ -25,11 +25,11 @@ export default function About() {
             </h1>
           </div>
         </div>
-        <div className=" w-full  h-[75vh]  justify-center items-center relative  flex flex-col">
+        <div className=" w-full animate hover:cursor-pointer h-[75vh]  justify-center items-center relative  flex flex-col">
           <Image
             height={500}
             width={400}
-            className="absolute "
+            className="absolute animate "
             src={CardBg}
             alt="Card Image"
           />
@@ -49,7 +49,7 @@ export default function About() {
           <Image
             height={500}
             width={400}
-            className="absolute "
+            className="absolute  "
             src={CardBg}
             alt="Card Image"
           />

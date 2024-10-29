@@ -6,7 +6,7 @@ import Testimonials from "./components/sections/Testimonials";
 
 export default function Home() {
   return (
-    <div className="h-full main relative z-20 bg-primary   text-white py-10 w-full ">
+    <div className="h-full main relative z-20 bg-primary   text-white  w-full ">
       <Hero
         title={"Create . Edit. Deliver ."}
         subheading={"We turn your dreams into reality."}
@@ -20,7 +20,6 @@ export default function Home() {
       <About />
       <OurWork />
       <Testimonials />
-    
     </div>
   );
 }
