@@ -13,7 +13,7 @@ export function RoundedButton({ text }: { text: string }) {
         e.preventDefault();
         setHover(false);
       }}
-      className={`scale-100 bg-primary  transition-all ${
+      className={`w-full  scale-100 bg-primary  transition-all ${
         hover ? "scale-95 opacity-90" : "opacity-100"
       } relative`}
     >
@@ -36,11 +36,11 @@ export function RoundedButton({ text }: { text: string }) {
         />
       </svg>
       <div
-        className={`absolute ${
+        className={`absolute flex  ${
           hover ? "scale-95 opacity-90" : "scale-100 opacity-100"
-        } top-7 left-16`}
+        } top-7 left-9`}
       >
-        <button className="font-clash font-bold text-white text-3xl uppercase">
+        <button className="font-clash font-bold text-white text-xl uppercase">
           {text}
         </button>
       </div>
