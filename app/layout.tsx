@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "./components/Footer";
+import Template from "./template";
 import { Navbar } from "./components/Navbar";
 
 const clashDisplay = localFont({

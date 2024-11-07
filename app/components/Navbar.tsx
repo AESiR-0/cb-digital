@@ -2,7 +2,8 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { animatePageOut } from "@/animations";
 const navItems = [
   { title: "home", link: "/" },
   { title: "our services", link: "/services" },
@@ -15,7 +16,14 @@ interface nav {
   title: string;
   link: string;
 }
+
 export const Navbar = () => {
+  const router = useRouter();
+
+  const handleClick = (href: string) => {
+    animatePageOut(href, router);
+  };
+
   const [isOpen, setIsOpen] = useState(false);
   const pathName = usePathname();
 
@@ -51,7 +59,8 @@ export const Navbar = () => {
                         ? "text-accent"
                         : "text-secondary-4"
                     }`}
-                    href={item.link}
+                    onClick={() => handleClick(item.link)}
+                    href={""}
                   >
                     {item.title}
                     <div className="bg-secondary scale-x-0 h-[2px] w-full group-hover:scale-x-100 transition-all duration-300"></div>
