@@ -15,7 +15,7 @@ export default function Home() {
         }
       />
       <div className="flex px-20 -mt-5 items-end justify-end">
-        <RoundedButton text="Say Hi!" />
+        <RoundedButton size="3xl" section="home" text="Say Hi!" />
       </div>
       <About />
       <OurWork />

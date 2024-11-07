@@ -22,7 +22,7 @@ export default function CTA() {
           Lets make something Awesome
         </h1>
         <div className="flex justify-start   ">
-          <RoundedButton text="Start a project!" />
+          <RoundedButton size="xl" section="CTA" text="Start a project!" />
         </div>
       </div>
     </div>

@@ -3,36 +3,29 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useSwipeable } from "react-swipeable";
-import placeholder from "@/public/static/work/placeholder.png";
-
-const images = [
-  {
-    title: "Testimonial 1",
-    content:
-      "KK is all around very easy to work with. He proved his avid leadership by taking full charge of the project when I was under the weather, his script has a lot of spelling mistakes but all in all 7/10",
-    client: "John Doe",
-    image: placeholder,
-  },
-  {
-    title: "Testimonial 2",
-    content:
-      "Pratik is all around very easy to work with. He proved his avid leadership by taking full charge of the project when I was under the weather, his script has a lot of spelling mistakes but all in all 7/10",
-    client: "John Doe",
-    image: placeholder,
-  },
-];
-
-export default function Carousel() {
+interface obj {
+  title: string;
+  content: string;
+  image: string;
+  client: any;
+}
+export default function Carousel({
+  content,
+  section,
+}: {
+  content: Array<obj>;
+  section: string;
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Handle navigation
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % content.length);
   };
 
   const goToPrev = () => {
     setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+      (prevIndex) => (prevIndex - 1 + content.length) % content.length
     );
   };
 
@@ -44,13 +37,16 @@ export default function Carousel() {
   });
 
   return (
-    <div {...handlers} className="relative h-[50vh] font-clash text-left w-full overflow-hidden">
-      {/* Carousel Images */}
+    <div
+      {...handlers}
+      className="relative h-[50vh] font-clash text-left w-full overflow-hidden"
+    >
+      {/* Carousel content */}
       <div
         className="flex transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {images.map((src, index) => (
+        {content.map((src, index) => (
           <div
             key={src.title}
             className="flex-shrink-0 w-full flex px-20 justify-between items-center"
@@ -89,7 +85,7 @@ export default function Carousel() {
 
       {/* Indicator dots */}
       <div className="absolute bottom-5  left-1/2 -translate-x-1/2 flex space-x-2">
-        {images.map((_, index) => (
+        {content.map((_, index) => (
           <div
             key={index}
             className={`w-3 h-3 rounded-full ${

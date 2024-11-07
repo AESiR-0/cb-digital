@@ -15,7 +15,7 @@ export default function Hero({
   body: string;
 }) {
   return (
-    <div className="w-screen h-[80vh] gap-40   bg-primary  flex items-center overflow-hidden ">
+    <div className="w-screen h-[85vh] py-10 gap-40   bg-primary  flex items-center overflow-hidden ">
       <div className=" w-[750px]  h-fit leading-none px-20 text-white ">
         <Title alignment="left" title={title} />
         <h5 className="text-[32px] normal-case my-3 tracking-wider font-clash font-semibold leading-none">
