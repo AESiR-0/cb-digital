@@ -3,6 +3,7 @@ import Image from "next/image";
 import Card2 from "@/public/static/card/Card2.svg";
 import { RoundedButton } from "@/app/components/Button";
 
+
 export default function CTA() {
   return (
     <div className="w-screen py-10 px-32  h-full  flex items-center  font-clash  ">
