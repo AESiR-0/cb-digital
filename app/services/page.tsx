@@ -3,6 +3,7 @@ import Services from "../components/sections/service/Services";
 import TitleBody from "../components/sections/TitleBody";
 import HowWeDoIt from "../components/sections/service/HowWeDoIt";
 import WhyChooseUs from "../components/sections/service/WhyChooseUs";
+import OurServices from "../components/sections/service/OurServices";
 
 export default function page() {
   return (
@@ -22,6 +23,7 @@ export default function page() {
         title="our secret sauce"
         body={`It;s all about balancing the art of storytelling with the science of audience engagement. We don;t just slice up your podcast—we craft stories that pull people in and keep them hooked from start to finish.`}
       />
+      <OurServices />
     </div>
   );
 }

@@ -11,7 +11,7 @@ export default function TitleBody({ title, body, color }: content) {
             <h1 className="font-bold uppercase text-5xl">
                 {title}
             </h1>
-            <p className=" font-normal leading-tight text-3xl">
+            <p className=" font-light leading-tight text-3xl">
                 {body}
             </p>
         </div>

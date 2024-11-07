@@ -11,7 +11,8 @@ export default function Services() {
         </h5>
         <div className="w-[35rem] flex flex-col gap-4">
           <h1 className="uppercase text-5xl tracking-wide  text-left font-semibold">We Make Your Podcast Pop!</h1>
-          <p className="text-lg font-normal pr-10 font-clash leading-wide normal-case ">
+                   <p className="text-lg font-normal pr-10 font-clash leading-wide normal-case ">
+
             Podcasts = Your content + How it hits the world.
             We're pros at finding those golden moments in your podcast and turning them into content that grabs eyeballs. Let us help you bring the best bits to the surface and make sure your audience can't get enough!        </p>
         </div>

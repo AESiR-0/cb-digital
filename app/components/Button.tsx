@@ -13,23 +13,23 @@ export function RoundedButton({
   const [hover, setHover] = useState(false);
   return (
     <div
-      onMouseEnter={(e) => {
-        e.preventDefault();
-        setHover(true);
-      }}
-      onMouseLeave={(e) => {
-        e.preventDefault();
-        setHover(false);
-      }}
-      className={`w-full h-20  scale-100 bg-primary  transition-all ${
-        hover ? "scale-95 opacity-90" : "opacity-100"
+      className={`w-full duration-500  h-20  scale-100   transition-all ${
+        hover ? " opacity-90" : "opacity-100"
       } relative`}
     >
       {section !== "CTA" ? (
         <svg
           width="257"
           height="85"
-          className="transition-all right-0 absolute duration-300"
+          onMouseEnter={(e) => {
+            e.preventDefault();
+            setHover(true);
+          }}
+          onMouseLeave={(e) => {
+            e.preventDefault();
+            setHover(false);
+          }}
+          className="transition-all right-0  absolute duration-500"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -40,7 +40,7 @@ export function RoundedButton({
             style={{
               strokeDasharray: "600",
               strokeDashoffset: hover ? "600" : "0",
-              transition: "stroke-dashoffset 0.4s ease-in-out",
+              transition: "stroke-dashoffset 0.3s ease-in-out",
             }}
           />
         </svg>
@@ -49,7 +49,16 @@ export function RoundedButton({
           xmlns="http://www.w3.org/2000/svg"
           width="227"
           height="60"
+          onMouseEnter={(e) => {
+            e.preventDefault();
+            setHover(true);
+          }}
+          onMouseLeave={(e) => {
+            e.preventDefault();
+            setHover(false);
+          }}
           viewBox="0 0 227 60"
+          className="scale-110"
           fill="none"
         >
           <path
@@ -66,9 +75,17 @@ export function RoundedButton({
       )}
 
       <div
-        className={`absolute flex  ${
+         onMouseEnter={(e) => {
+        e.preventDefault();
+        setHover(true);
+      }}
+      onMouseLeave={(e) => {
+        e.preventDefault();
+        setHover(false);
+      }}
+        className={`absolute flex duration-500  ${
           hover ? "scale-95 opacity-90" : "scale-100 opacity-100"
-        } top-5 ${section == "CTA" ? "left-3" : "right-20"} `}
+        }  ${section == "CTA" ? "top-5 left-3" : " top-7 right-20"} `}
       >
         <button
           className={`font-clash font-bold text-white text-${size} uppercase`}

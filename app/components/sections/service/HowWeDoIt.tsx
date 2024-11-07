@@ -26,7 +26,7 @@ const HowWeDoIt = () => {
   ];
 
   return (
-    <div className="flex font-clash h-screen  flex-col items-center justify-center my-10  bg-primary text-white">
+    <div className="flex font-clash h-full  flex-col items-center justify-center my-20  bg-primary text-white">
       <h2 className="text-7xl font-bold pb-8">HOW WE DO IT</h2>
       <div className="grid place-items-center grid-cols-1 md:grid-cols-2  max-w-1/3  w-full">
         {features.map((feature, index) => (
