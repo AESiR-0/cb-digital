@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${clashDisplay.variable} ${wiga.variable}  scroll-smooth h-full relative bg-primary  overflow-x-hidden  antialiased`}
       >
         <Navbar />
-        <div className=" h-full main relative z-20 bg-primary   text-white py-10 w-full border-b-transparent rounded-b-2xl">
+        <div className=" h-full main relative z-20 bg-primary   text-white py-10 w-full border-b-transparent rounded-b-3xl">
           {children}
         </div>
         <div className="h-[70vh] z-0   bg-transparent"></div>
