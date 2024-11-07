@@ -8,7 +8,7 @@ const navItems = [
   { title: "our services", link: "/services" },
   { title: "our work", link: "/work" },
   { title: "team", link: "/team" },
-  {title : 'contact', link :'/contact'}
+  { title: "contact", link: "/contact" },
 ];
 
 interface nav {
@@ -18,12 +18,12 @@ interface nav {
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = usePathname();
-  
-    return (
-      <>
+
+  return (
+    <>
       <div className="w-screen items-center text-white  z-50  flex justify-between overflow-hidden px-5 md:px-20 h-20 bg-seconday-2">
         <div className="flex items-center justify-between w-full md:w-auto">
-         <span className="font-wig text-4xl">CB</span>
+          <span className="font-wig text-4xl">CB</span>
           <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
             <svg
               className="w-6 h-6"
@@ -46,8 +46,10 @@ export const Navbar = () => {
                 return (
                   <Link
                     key={index}
-                    className={`group font-clash font-black  transition-all ${
-                      item.link === pathName ? "text-accent" : "text-secondary-4"
+                    className={`group hover:opacity-95  duration-200 ease-in-out hover:scale-95 font-clash font-black  transition-all ${
+                      item.link === pathName
+                        ? "text-accent"
+                        : "text-secondary-4"
                     }`}
                     href={item.link}
                   >
@@ -68,7 +70,7 @@ export const Navbar = () => {
             return (
               <Link
                 key={index}
-                className={`group transition-all font-semibold  ${
+                className={`group  hover:opacity-95  duration-200 ease-in-out hover:scale-95 font-semibold  ${
                   item.link === pathName ? "text-accent" : "text-secondary-4"
                 }`}
                 href={item.link}
@@ -87,6 +89,5 @@ export const Navbar = () => {
         </div>
       </div>
     </>
-    );
-  };
-  
+  );
+};
