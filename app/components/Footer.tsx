@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Instagram from "@/public/static/socials/Instagram.png";
 import Facebook from "@/public/static/socials/Facebook.png";
-import Linkedin from "@/public/static/socials/Linkedin.png";
+import Linkedin from "@/public/static/socials/LinkedIn.png";
 
 const navItems = [
   { title: "home", link: "/" },
