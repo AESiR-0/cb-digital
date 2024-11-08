@@ -10,8 +10,7 @@ const navItems = [
   { title: "our services", link: "/services" },
   { title: "our work", link: "/work" },
   { title: "team", link: "/team" },
-  { title: "contact", link: "/contact" },
-];
+ ];
 
 interface nav {
   title: string;
