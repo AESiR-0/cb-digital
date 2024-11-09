@@ -10,7 +10,7 @@ const navItems = [
   { title: "our services", link: "/services" },
   { title: "our work", link: "/work" },
   { title: "team", link: "/team" },
- ];
+];
 
 interface nav {
   title: string;
@@ -19,14 +19,20 @@ interface nav {
 
 export default function Footer() {
   return (
-    <div className="fixed z-10 py-10 bg-[#101010] block bottom-0  w-full ">
-      <footer className=" font-clash  text-white w-full h-full flex justify-center items-center">
-        <div className="flex flex-col items-center  justify-center w-screen gap-5">
-          <h1 className="text-[15rem] font-wig">CB Digital</h1>
+    <div className="fixed z-10 py-10 bg-[#101010] block bottom-0 w-full">
+      <footer className="font-clash text-white w-full h-full flex justify-center items-center">
+        <div className="flex flex-col items-center justify-center w-full gap-5 px-5 md:px-20">
+          {/* Title Section */}
+          <h1 className="text-[5rem] leading-none md:text-[13rem] w-full font-wig text-center">CB Digital</h1>
+
+          {/* Divider Line */}
           <span className="w-1/2 h-1 bg-white"></span>
-          <div className="flex h-auto items-center justify-evenly w-full  ">
-            <div className="gap-5  icons flex">
-              <Link href={"instagram.com"}>
+
+          {/* Social Icons and Navigation Links */}
+          <div className="flex flex-col md:flex-row justify-between w-full items-center md:items-start gap-10 mt-10">
+            {/* Social Media Icons */}
+            <div className="flex gap-5 justify-center items-center">
+              <Link href={"https://instagram.com"} target="_blank">
                 <Image
                   src={Instagram}
                   className="hover:opacity-95 transition-all duration-200 ease-in-out hover:scale-95"
@@ -35,7 +41,7 @@ export default function Footer() {
                   width={32}
                 />
               </Link>
-              <Link href={"linkedin.com"}>
+              <Link href={"https://linkedin.com"} target="_blank">
                 <Image
                   src={Linkedin}
                   className="hover:opacity-95 transition-all duration-200 ease-in-out hover:scale-95"
@@ -44,23 +50,24 @@ export default function Footer() {
                   width={32}
                 />
               </Link>
-
-              <Link href={"facebook.com"}>
+              <Link href={"https://facebook.com"} target="_blank">
                 <Image
-                  className="hover:opacity-95 transition-all duration-200 ease-in-out hover:scale-95"
                   src={Facebook}
+                  className="hover:opacity-95 transition-all duration-200 ease-in-out hover:scale-95"
                   alt="social icon facebook"
                   height={32}
                   width={32}
                 />
               </Link>
             </div>
-            <div className="flex font-clash group gap-5">
+
+            {/* Navigation Links */}
+            <div className="flex gap-5 flex-wrap justify-center">
               {navItems.map((item: nav, index: number) => {
                 return (
                   <Link
                     key={index}
-                    className="hover:opacity-95 transition-all duration-200 ease-in-out hover:scale-95"
+                    className="group hover:opacity-95 transition-all duration-200 ease-in-out hover:scale-95"
                     href={item.link}
                   >
                     {item.title}
@@ -69,11 +76,13 @@ export default function Footer() {
                 );
               })}
             </div>
-            <div className="text-right ">
-              <h2>Proudly created in India.</h2>
-              <h2>All Rights Reserved.</h2>
-              <h2>© 2024 CB Digital</h2>
-            </div>
+          </div>
+
+          {/* Footer Text */}
+          <div className="text-center mt-10">
+            <h2 className="flex max-md:flex-col max-md:gap-0 gap-3">Proudly created in India. <span> ©  CB Digital 2024</span>
+              <span> All Rights Reserved.</span>
+            </h2>
           </div>
         </div>
       </footer>

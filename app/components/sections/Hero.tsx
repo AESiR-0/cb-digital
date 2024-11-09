@@ -3,7 +3,6 @@ import Image from "next/image";
 import Card from "../Cards";
 import Title from "../Title";
 import Card2 from "@/public/static/card/Card2.svg";
-import { RoundedButton } from "../Button";
 
 export default function Hero({
   title,
@@ -15,20 +14,20 @@ export default function Hero({
   body: string;
 }) {
   return (
-    <div className="w-screen h-[85vh] py-10 gap-40   bg-primary  flex items-center overflow-hidden ">
-      <div className=" w-[750px]  h-fit leading-none px-20 text-white ">
+    <div className="w-screen h-auto md:h-[85vh] py-10 gap-10 md:gap-40 bg-primary flex flex-col md:flex-row items-center overflow-hidden">
+      <div className="w-full md:w-[750px] px-5 md:px-20 text-white">
         <Title alignment="left" title={title} />
-        <h5 className="text-[32px] normal-case my-3 tracking-wider font-clash font-semibold leading-none">
+        <h5 className="text-2xl md:text-[32px] my-3 tracking-wide font-clash font-semibold leading-none">
           {subheading}
         </h5>
-        <p className="text-lg font-normal font-clash leading-tight normal-case pr-24">
+        <p className="text-xl md:text-lg font-light font-clash leading-tight normal-case pr-4 md:pr-24">
           {body}
         </p>
       </div>
-      <div className="relative z-20 ">
+      <div className="relative block max-md:hidden z-20 mt-10 md:mt-0">
         <Card />
         <Image
-          className="absolute opacity-100 -top-20 scale-105 z-20 -right-32"
+          className="absolute opacity-100 top-0 md:-top-20 scale-90 md:scale-105 z-10 right-0 md:-right-32"
           alt="absolute card"
           src={Card2}
         />

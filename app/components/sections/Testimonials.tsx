@@ -18,11 +18,12 @@ const content = [
     image: "/static/work/placeholder.png",
   },
 ];
+
 export default function Testimonials() {
   return (
-    <div className="bg-primary rounded-b   py-10 ">
+    <div className="bg-primary rounded-b py-10 px-4 sm:px-6 lg:px-8">
       <Title alignment="center" title="Testimonials" />
-      <div className="w-screen py-10">
+      <div className="w-full max-w-screen-lg mx-auto py-6 sm:py-8 lg:py-10">
         <Carousel section="testimonials" content={content} />
       </div>
     </div>
