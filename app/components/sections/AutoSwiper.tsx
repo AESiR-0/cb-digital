@@ -1,46 +1,59 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 
-interface AutoSwiperProps {
+interface MarqueeSwiperProps {
   images: string[]; // Array of image URLs to display in the carousel
+  speed?: number; // Speed of the marquee scroll in seconds
 }
 
-const AutoSwiper: React.FC<AutoSwiperProps> = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Function to go to the next slide (move by 1 image)
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  // UseEffect to automatically change the slide every 2 seconds (2000ms)
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 2000); // Change every 2 seconds
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [images.length]);
+const MarqueeSwiper: React.FC<MarqueeSwiperProps> = ({
+  images,
+  speed = 20,
+}) => {
+  // Duplicate images array to create seamless infinite scroll effect
+  const marqueeImages = [...images, ...images];
 
   return (
-    <div className="relative w-full h-[50vh] overflow-hidden">
-      {/* Slide container */}
+    <div className="relative w-full  h-full overflow-hidden">
       <div
-        className="flex transition-all duration-1000 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        className="flex w-[200%] h-full animate-marquee whitespace-nowrap"
+        style={{ animationDuration: `${speed}s` }}
       >
-        {images.map((image, idx) => (
-          <div key={idx} className="flex-shrink-0 w-full h-full">
+        {marqueeImages.map((image, idx) => (
+          <div
+            key={idx}
+            className="flex-shrink-0 w-1/2 max-md:h-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4"
+          >
             <Image
               src={image}
-              alt={`Slide ${idx + 1}`}
-              width={600} // Adjust based on your image size requirements
-              height={300} // Adjust based on your image size requirements
-              objectFit="cover" // Ensures images cover the container
+              alt={`Marquee Image ${idx + 1}`}
+              width={800}
+              height={600}
+              objectFit="cover"
+              className="w-full h-full rounded-lg"
             />
           </div>
         ))}
       </div>
+
+      <style jsx>{`
+        /* Keyframes for continuous marquee animation */
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .animate-marquee {
+          animation: marquee linear infinite;
+        }
+      `}</style>
     </div>
   );
 };
 
-export default AutoSwiper;
+export default MarqueeSwiper;

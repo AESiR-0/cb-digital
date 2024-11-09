@@ -19,7 +19,7 @@ export const animatePageIn = () => {
         {
           borderTopLeftRadius: "50vh",
           borderBottomLeftRadius: "50vh",
-          duration: 1.4,
+          duration: 2.4,
         },
         "<"
       );
@@ -41,7 +41,7 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
     })
       .to(animationWrapper, {
         xPercent: 0,
-        duration: 0.8,
+        duration: 2,
         onComplete: () => {
           router.push(href);
         },
@@ -51,7 +51,7 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
         {
           borderTopRightRadius: "0",
           borderBottomRightRadius: "0",
-          duration: 0.4,
+          duration: 2,
         },
         "<"
       );

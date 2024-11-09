@@ -28,7 +28,7 @@ export function RoundedButton({
             e.preventDefault();
             setHover(false);
           }}
-          className="transition-all  right-0 absolute duration-500"
+          className="transition-all  md:right-0 absolute duration-500"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -85,11 +85,11 @@ export function RoundedButton({
         className={`absolute flex duration-500 ${hover ? "scale-95 opacity-90" : "scale-100 opacity-100"
           } ${section === "CTA"
             ? "top-5 left-3 md:top-5 md:left-3"
-            : "top-6 right-16 md:top-7 md:right-20"
+            : "top-6  md:top-7 md:right-20"
           }`}
       >
         <button
-          className={`font-clash font-bold text-white text-${size} uppercase`}
+          className={`font-clash font-bold  text-white text-${size} uppercase`}
         >
           {text}
         </button>
