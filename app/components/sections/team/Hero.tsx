@@ -16,7 +16,7 @@ export default function Hero() {
           <h1 className="md:text-4xl text-3xl lg:text-6xl font-semibold tracking-wide leading-snug">
             CB Digital hits media experience out of the park!
           </h1>
-          <p className="text-base border lg:text-lg font-normal leading-relaxed lg:pr-10">
+          <p className="text-base  lg:text-lg font-normal leading-relaxed lg:pr-10">
             Podcasts = Your content + How it hits the world. We're pros at
             finding those golden moments in your podcast and turning them into
             content that grabs eyeballs. Let us help you bring the best bits to
