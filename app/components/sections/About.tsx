@@ -34,7 +34,7 @@ export default function About() {
             src={CardBg}
             alt="Card Image"
             height={400}
-            width={400}
+            width={500}
             className="absolute top-0 left-0 w-full h-full object-contain rounded-lg"
           />
           <div className="z-20 flex flex-col justify-between h-[500px] text-center px-5 py-10 md:pb-20">
