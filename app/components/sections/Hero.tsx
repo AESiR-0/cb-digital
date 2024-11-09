@@ -16,7 +16,9 @@ export default function Hero({
   return (
     <div className="w-screen h-auto md:h-[85vh] py-10 gap-10 md:gap-40 bg-primary flex flex-col md:flex-row items-center overflow-hidden">
       <div className="w-full md:w-[750px] px-5 md:px-20 text-white">
-        <Title alignment="left" title={title} />
+        <h1 className="my-10 font-clash font-bold uppercase text-left max-md:text-6xl   max-md:text-center leading-none text-[5.5rem]">
+          {title}
+        </h1>
         <h5 className="text-2xl md:text-[32px] my-3 tracking-wide font-clash font-semibold leading-none">
           {subheading}
         </h5>

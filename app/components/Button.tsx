@@ -84,7 +84,7 @@ export function RoundedButton({
         }}
         className={`absolute flex duration-500 ${hover ? "scale-95 opacity-90" : "scale-100 opacity-100"
           } ${section === "CTA"
-            ? "top-2 left-1 md:top-5 md:left-3"
+            ? "top-5 left-3 md:top-5 md:left-3"
             : "top-6 right-16 md:top-7 md:right-20"
           }`}
       >

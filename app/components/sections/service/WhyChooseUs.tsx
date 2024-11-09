@@ -21,23 +21,23 @@ const content = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="flex  flex-col md:flex-row font-clash items-start justify-start bg-secondary text-white py-12 px-20">
+    <section className="flex  flex-col md:flex-row font-clash items-start justify-start bg-secondary text-white py-12 px-10 md:px-20">
       {/* Left Side - Title */}
       <div className="w-full md:w-1/3 mb-8 md:mb-0">
-        <h2 className="text-7xl font-bold leading-none">
-          WHY
-          <br />
-          CHOOSE
-          <br />
-          US
+        <h2 className="md:text-7xl max-md:px-2 max-md:font-bold max-md:text-center text-4xl  gap-2 flex md:flex-col flex-row font-bold leading-none">
+          <span>WHY</span> <span>CHOOSE</span>
+          <span>US</span>
         </h2>
+        <span className="md:hidden block h-[1px] mt-2 bg-gray-400 opacity-85 w-full px-10"></span>
       </div>
 
       {/* Right Side - Content */}
       <div className="w-full h-full flex flex-col justify-center md:w-2/3 space-y-6">
         {content.map((data, index) => (
-          <div className="">
-            <h3 className="text-4xl font-semibold">{data.title}</h3>
+          <div className="px-2">
+            <h3 className="text-4xl max-md:text-3xl font-semibold">
+              {data.title}
+            </h3>
             <p className="text-gray-300 text-2xl py-3 font-light">
               {data.content}
             </p>

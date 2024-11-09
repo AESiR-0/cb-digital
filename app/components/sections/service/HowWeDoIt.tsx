@@ -32,7 +32,7 @@ const HowWeDoIt = () => {
         {features.map((feature, index) => (
           <div
             key={index}
-            className="relative bg-[url('/static/card/HowWeDoIt.png')] bg-no-repeat bg-contain items-center p-3  md:px-10 text-white flex flex-col justify-center  rounded-lg shadow-lg h-[300px] md:h-[400px] lg:h-[450px]"
+            className="relative md:gap-10   bg-[url('/static/card/HowWeDoIt.png')] bg-no-repeat bg-contain items-center p-3  md:px-10 text-white flex flex-col justify-center  rounded-lg shadow-lg h-[300px] md:h-[400px] lg:h-[450px]"
           >
             <h3 className="md:text-4xl text-xl  sm:text-3xl font-semibold mb-4">{feature.title}</h3>
             <p className="text-lg md:text-2xl sm:text-xl text-gray-300">{feature.description}</p>
