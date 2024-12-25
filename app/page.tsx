@@ -8,7 +8,8 @@ export default function Home() {
   return (
     <div className="h-full main relative z-20 bg-primary   text-white  w-full ">
       <Hero
-        title={"Create . Edit. Deliver ."}
+        title1={"Create . Edit."}
+        title2={"& Deliver."}
         subheading={"We turn your dreams into reality."}
         body={
           "At CB Digital, we specialize in turning your vision into captivating Podcasts and Reels, with a fresh perspective and unmatched speed."

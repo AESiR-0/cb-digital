@@ -21,9 +21,9 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="w-screen items-center text-white  z-50  flex justify-between overflow-hidden px-5 md:px-20 h-20 bg-seconday-2">
+      <div className="w-screen items-center  text-white  z-50   flex justify-between overflow-hidden px-5 md:px-20 h-20 bg-seconday-2">
         <div className="flex items-center justify-between w-full md:w-auto">
-          <span className="font-wig text-4xl">CB</span>
+          <span className="font-tan  py-2 text-2xl">CB Digital</span>
           <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
             <svg
               className="w-6 h-6"

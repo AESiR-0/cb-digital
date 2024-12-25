@@ -13,9 +13,8 @@ export function RoundedButton({
   const [hover, setHover] = useState(false);
   return (
     <div
-      className={`w-full duration-500  h-20  scale-100   transition-all ${
-        hover ? " opacity-90" : "opacity-100"
-      } relative`}
+      className={`w-full animate-slide-up-fade-in duration-500  h-20  scale-100   transition-all ${hover ? " opacity-90" : "opacity-100"
+        } relative`}
     >
       {section !== "CTA" ? (
         <svg
@@ -29,7 +28,7 @@ export function RoundedButton({
             e.preventDefault();
             setHover(false);
           }}
-          className="transition-all right-0  absolute duration-500"
+          className="transition-all left-1/2 transform -translate-x-1/2 absolute duration-500"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -75,20 +74,19 @@ export function RoundedButton({
       )}
 
       <div
-         onMouseEnter={(e) => {
-        e.preventDefault();
-        setHover(true);
-      }}
-      onMouseLeave={(e) => {
-        e.preventDefault();
-        setHover(false);
-      }}
-        className={`absolute flex duration-500  ${
-          hover ? "scale-95 opacity-90" : "scale-100 opacity-100"
-        }  ${section == "CTA" ? "top-5 left-3" : " top-7 right-20"} `}
+        onMouseEnter={(e) => {
+          e.preventDefault();
+          setHover(true);
+        }}
+        onMouseLeave={(e) => {
+          e.preventDefault();
+          setHover(false);
+        }}
+        className={`absolute  flex duration-500  ${hover ? "scale-95 opacity-90" : "scale-100 opacity-100"
+          }  ${section == "CTA" ? "top-5 left-1/2" : " top-7 left-[45%]"} `}
       >
         <button
-          className={`font-clash font-bold text-white text-${size} uppercase`}
+          className={`font-clash  font-bold text-white text-${size} uppercase`}
         >
           {text}
         </button>

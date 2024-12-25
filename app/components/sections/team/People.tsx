@@ -7,7 +7,7 @@ export default function Team() {
     <div className="h-full bg-secondary w-screen flex flex-col px-80 py-10 justify-center">
       <h1 className="text-right font-thin text-5xl">
         Meet the people behind <br />
-        <span className="font-bold font-wig">CB Digital</span>
+        <span className="font-bold font-tan">CB Digital</span>
       </h1>
       <div className="flex gap-40 ">
         <div className="w-1/2">

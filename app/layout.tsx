@@ -9,9 +9,9 @@ const clashDisplay = localFont({
   variable: "--font-clash",
 });
 
-const wiga = localFont({
-  src: "./fonts/Wiga/Wiga-Regular.ttf",
-  variable: "--font-wig",
+const tan = localFont({
+  src: "./fonts/Tan/tanheadline-Regular.ttf",
+  variable: "--font-tan",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${clashDisplay.variable} ${wiga.variable}  scroll-smooth h-full relative bg-primary  overflow-x-hidden  antialiased`}
+        className={`${clashDisplay.variable} ${tan.variable}  scroll-smooth h-full relative bg-primary  overflow-x-hidden  antialiased`}
       >
         <Navbar />
         <div className=" h-full main font-clash relative z-20 bg-primary   text-white my-10 w-full border-b-transparent rounded-b-3xl">

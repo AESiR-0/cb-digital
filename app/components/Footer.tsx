@@ -23,7 +23,7 @@ export default function Footer() {
     <div className="fixed z-10 py-10 bg-[#101010] block bottom-0  w-full ">
       <footer className=" font-clash  text-white w-full h-full flex justify-center items-center">
         <div className="flex flex-col items-center  justify-center w-screen gap-5">
-          <h1 className="text-[15rem] font-wig">CB Digital</h1>
+          <h1 className="text-[15rem] font-tan">CB Digital</h1>
           <span className="w-1/2 h-1 bg-white"></span>
           <div className="flex h-auto items-center justify-evenly w-full  ">
             <div className="gap-5  icons flex">

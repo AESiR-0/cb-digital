@@ -6,33 +6,28 @@ import Card2 from "@/public/static/card/Card2.svg";
 import { RoundedButton } from "../Button";
 
 export default function Hero({
-  title,
+  title1,
+  title2,
   subheading,
   body,
 }: {
-  title: string;
+  title1: string;
+  title2: string;
   subheading: string;
   body: string;
 }) {
   return (
-    <div className="w-screen h-[85vh] py-10 gap-40   bg-primary  flex items-center overflow-hidden ">
-      <div className=" w-[750px]  h-fit leading-none px-20 text-white ">
-        <Title alignment="left" title={title} />
-        <h5 className="text-[32px] normal-case my-3 tracking-wider font-clash font-semibold leading-none">
+    <div className="w-screen h-[75vh] py-10 gap-40 text-center  bg-primary justify-center  flex items-center overflow-hidden ">
+      <div className=" w-[1000px]  h-fit leading-none px-20 text-white ">
+        <Title alignment="center" title1={title1} title2={title2} />
+        <h5 className="text-[32px] animate-slide-up-fade-in normal-case my-3 tracking-wider font-clash font-semibold leading-none">
           {subheading}
         </h5>
-        <p className="text-lg font-normal font-clash leading-tight normal-case pr-24">
+        <p className="text-lg animate-slide-up-fade-in font-normal font-clash leading-tight normal-case pr-24">
           {body}
         </p>
       </div>
-      <div className="relative z-20 ">
-        <Card />
-        <Image
-          className="absolute opacity-100 -top-20 scale-105 z-20 -right-32"
-          alt="absolute card"
-          src={Card2}
-        />
-      </div>
+
     </div>
   );
 }
