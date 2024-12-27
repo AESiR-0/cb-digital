@@ -3,7 +3,6 @@ import Image from "next/image";
 import Card from "../Cards";
 import Title from "../Title";
 import Card2 from "@/public/static/card/Card2.svg";
-import { RoundedButton } from "../Button";
 
 export default function Hero({
   title1,

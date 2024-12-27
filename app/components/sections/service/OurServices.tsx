@@ -32,11 +32,11 @@ export default function OurServices() {
   return (
     <>
       <div className="flex font-clash h-full  flex-col py-10 items-center justify-center my-20  bg-secondary text-white">
-        <h2 className="text-7xl font-bold uppercase pb-8">Our Services</h2>
-        <div className="grid gap-20 px-32 py-10 place-items-center grid-cols-1 md:grid-cols-2  max-w-1/3  w-full">
+        <h2 className="text-7xl font-bold max-md:text-5xl uppercase pb-8">Our Services</h2>
+        <div className="grid gap-20 px-5 md:px-32 py-10 place-items-center grid-cols-1 md:grid-cols-2  max-w-1/3  w-full">
           {content.map((data, index) => (
             <div className="">
-              <h3 className="text-4xl py-2 ">{data.title}</h3>
+              <h3 className="text-4xl w-full max-md:text-center py-2 ">{data.title}</h3>
               <p className="text-xl  font-thin">{data.content}</p>
             </div>
           ))}

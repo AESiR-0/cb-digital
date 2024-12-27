@@ -1,23 +1,31 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { animatePageOut } from "@/animations";
+
 const navItems = [
   { title: "home", link: "/" },
   { title: "our services", link: "/services" },
   { title: "our work", link: "/work" },
   { title: "team", link: "/team" },
-  { title: "contact", link: "/contact" },
 ];
 
-interface nav {
+interface NavItem {
   title: string;
   link: string;
 }
+
 export const Navbar = () => {
+  const router = useRouter();
+  const handleClick = (href: string) => animatePageOut(href, router);
+
   const [isOpen, setIsOpen] = useState(false);
   const pathName = usePathname();
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <>
@@ -36,58 +44,53 @@ export const Navbar = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M4 6h16M4 12h16m-7 6h7"
+                d="M6 18L18 6M6 6l12 12"
               />
             </svg>
           </button>
-          {isOpen && (
-            <div className="bg-secondary fixed flex flex-col font-clash justify-center items-center overflow-hidden top-0 left-0 z-10">
-              {navItems.map((item: nav, index: number) => {
-                return (
-                  <Link
-                    key={index}
-                    className={`group hover:opacity-95  duration-200 ease-in-out hover:scale-95 font-clash font-black  transition-all ${
-                      item.link === pathName
-                        ? "text-accent"
-                        : "text-secondary-4"
-                    }`}
-                    href={item.link}
-                  >
-                    {item.title}
-                    <div className="bg-secondary scale-x-0 h-[2px] w-full group-hover:scale-x-100 transition-all duration-300"></div>
-                  </Link>
-                );
-              })}
-            </div>
-          )}
-        </div>
-        <div
-          className={`hidden md:flex-row md:flex font-sans text-lg text-secondary-4 gap-10 ${
-            isOpen ? "flex" : "hidden"
-          } md:flex`}
-        >
-          {navItems.map((item: nav, index: number) => {
-            return (
+          <div className="flex flex-col items-center space-y-6">
+            {navItems.map((item: NavItem, index) => (
               <Link
                 key={index}
-                className={`group  hover:opacity-95  duration-200 ease-in-out hover:scale-95 font-semibold  ${
-                  item.link === pathName ? "text-accent" : "text-secondary-4"
-                }`}
                 href={item.link}
+                onClick={() => {
+                  handleClick(item.link);
+                  closeMenu();
+                }}
+                className={`font-clash font-black ${
+                  item.link === pathName ? "text-accent" : "text-secondary-4"
+                } transition duration-200 hover:scale-95`}
               >
                 {item.title}
-                <div
-                  className={`${
-                    item.link === pathName
-                      ? "bg-accent scale-x-100 group-hover:scale-x-0 "
-                      : "scale-x-0 group-hover:scale-x-100 bg-accent "
-                  }  h-[2px] w-full  transition-all duration-300`}
-                ></div>
+                <div className="bg-accent h-[2px] w-full mt-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               </Link>
-            );
-          })}
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-10 text-lg font-semibold">
+          {navItems.map((item: NavItem, index) => (
+            <Link
+              key={index}
+              href={item.link}
+              onClick={() => handleClick(item.link)}
+              className={`group ${
+                item.link === pathName ? "text-accent" : "text-secondary-4"
+              } transition duration-200 hover:scale-95`}
+            >
+              {item.title}
+              <div
+                className={`h-[2px] w-full transition-transform duration-300 ${
+                  item.link === pathName
+                    ? "bg-accent scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100 bg-accent"
+                }`}
+              ></div>
+            </Link>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };

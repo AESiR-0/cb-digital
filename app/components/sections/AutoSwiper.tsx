@@ -1,56 +1,59 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 
-interface AutoSwiperProps {
+interface MarqueeSwiperProps {
   images: string[]; // Array of image URLs to display in the carousel
+  speed?: number; // Speed of the marquee scroll in seconds
 }
 
-const AutoSwiper: React.FC<AutoSwiperProps> = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const imagesPerSlide = 1;
-  // Function to go to the next slide (move by 3 images)
-  const nextSlide = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex + imagesPerSlide) % images.length
-    );
-  };
-
-  // Use effect to automatically change the slide every 3 seconds (3000ms)
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 2000); // Change every 3 seconds
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [images.length]);
+const MarqueeSwiper: React.FC<MarqueeSwiperProps> = ({
+  images,
+  speed = 20,
+}) => {
+  // Duplicate images array to create seamless infinite scroll effect
+  const marqueeImages = [...images, ...images];
 
   return (
-    <div className="relative w-full h-[50vh] overflow-hidden">
-      {/* Slide container */}
-      <div className="flex gap-10 h-[30vh] transition-all w-full duration-1000 ease-in-out">
-        {images.map((image, idx) => (
-          <Image
-            src={image}
-            alt={`Slide ${idx + 1}`}
-            width={600} // Adjust based on your image size requirements
-            height={300} // Adjust based on your image size requirements
-          />
+    <div className="relative w-full  h-full overflow-hidden">
+      <div
+        className="flex w-[200%] h-full animate-marquee whitespace-nowrap"
+        style={{ animationDuration: `${speed}s` }}
+      >
+        {marqueeImages.map((image, idx) => (
+          <div
+            key={idx}
+            className="flex-shrink-0 w-1/2 max-md:h-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4"
+          >
+            <Image
+              src={image}
+              alt={`Marquee Image ${idx + 1}`}
+              width={800}
+              height={600}
+              objectFit="cover"
+              className="w-full h-full rounded-lg"
+            />
+          </div>
         ))}
       </div>
 
-      {/* Optional navigation buttons */}
-      {/* <button
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white bg-black bg-opacity-50"
-        onClick={prevSlide}
-      >
-        &#10094;
-      </button>
-      <button
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white bg-black bg-opacity-50"
-        onClick={nextSlide}
-      >
-        &#10095;
-      </button> */}
+      <style jsx>{`
+        /* Keyframes for continuous marquee animation */
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .animate-marquee {
+          animation: marquee linear infinite;
+        }
+      `}</style>
     </div>
   );
 };
 
-export default AutoSwiper;
+export default MarqueeSwiper;

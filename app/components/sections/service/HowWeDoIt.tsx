@@ -26,16 +26,16 @@ const HowWeDoIt = () => {
   ];
 
   return (
-    <div className="flex font-clash h-full  flex-col items-center justify-center my-20  bg-primary text-white">
-      <h2 className="text-7xl font-bold pb-8">HOW WE DO IT</h2>
-      <div className="grid place-items-center grid-cols-1 md:grid-cols-2  max-w-1/3  w-full">
+    <div className="flex flex-col items-center justify-center bg-primary text-white py-20 px-5 md:px-20">
+      <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold pb-8 text-center">HOW WE DO IT</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2  gap-10 max-w-full w-full">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="py-10  pl-8 pr-20 h-[400px] w-[550px] bg-[url('/static/card/HowWeDoIt.png')] bg-no-repeat text-white"
+            className="relative md:gap-10   bg-[url('/static/card/HowWeDoIt.png')] bg-no-repeat bg-contain items-center p-3  md:px-10 text-white flex flex-col justify-center  rounded-lg shadow-lg h-[300px] md:h-[400px] lg:h-[450px]"
           >
-            <h3 className="text-4xl font-semibold mb-5">{feature.title}</h3>
-            <p className="text-2xl text-gray-300">{feature.description}</p>
+            <h3 className="md:text-4xl text-xl  sm:text-3xl font-semibold mb-4">{feature.title}</h3>
+            <p className="text-lg md:text-2xl sm:text-xl text-gray-300">{feature.description}</p>
           </div>
         ))}
       </div>
