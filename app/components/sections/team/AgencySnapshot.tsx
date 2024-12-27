@@ -1,31 +1,66 @@
+"use client";
+import React, { useState, useEffect } from "react";
+
 const content = [
   {
     title: "happy clients",
-    number: "100",
+    number: 100,
     content:
       "Had to show the number here, can't fit 100 testimonials in our website. (really think we should get a new developer)",
   },
   {
     title: "podcasts produced",
-    number: "25",
+    number: 25,
     content:
       "Had to show the number here, can't fit 100 testimonials in our website. (really think we should get a new developer)",
   },
   {
     title: "reels repurposed",
-    number: "500",
+    number: 500,
     content:
       "We are not kidding, literally counted. (had an intern do it, instead of making coffee) ",
   },
   {
     title: "thumbnails made",
-    number: "300",
+    number: 300,
     content:
       "Well, this annoys us the most but we still do that to get the clicks! (we're quite good at it)",
   },
 ];
 
 export default function AgencySnapshot() {
+  const [counts, setCounts] = useState(content.map(() => 0));
+
+  useEffect(() => {
+    const duration = 2000; // Duration of the animation in milliseconds
+    const interval = 50; // Interval for updating the count
+    const steps = duration / interval;
+
+    const counters = content.map((item, index) => {
+      const increment = item.number / steps;
+      let currentCount = 0;
+
+      const counterInterval = setInterval(() => {
+        currentCount += increment;
+        setCounts((prevCounts) => {
+          const newCounts = [...prevCounts];
+          newCounts[index] = Math.min(Math.round(currentCount), item.number);
+          return newCounts;
+        });
+
+        if (currentCount >= item.number) {
+          clearInterval(counterInterval);
+        }
+      }, interval);
+
+      return counterInterval;
+    });
+
+    return () => {
+      counters.forEach(clearInterval);
+    };
+  }, []);
+
   return (
     <div className="py-10 px-5 md:px-10 lg:px-20">
       <div className="flex flex-col lg:flex-row lg:gap-24 items-start">
@@ -39,8 +74,12 @@ export default function AgencySnapshot() {
           {content.map((data, index) => (
             <div key={index} className="flex flex-col">
               <h6 className="pb-2 lg:pb-5 font-semibold">{data.title}</h6>
-              <h6 className="text-4xl lg:text-5xl font-light mb-2 lg:mb-4">{data.number}+</h6>
-              <p className="font-thin text-base lg:text-xl pr-2 lg:pr-10">{data.content}</p>
+              <h6 className="text-4xl lg:text-5xl font-light mb-2 lg:mb-4">
+                {counts[index]}+
+              </h6>
+              <p className="font-thin text-base lg:text-xl pr-2 lg:pr-10">
+                {data.content}
+              </p>
             </div>
           ))}
         </div>

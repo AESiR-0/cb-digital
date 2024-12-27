@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useSwipeable } from "react-swipeable";
 
@@ -36,6 +36,12 @@ export default function Carousel({
     onSwipedRight: goToPrev,
     trackMouse: true,
   });
+
+  // Autoplay functionality
+  useEffect(() => {
+    const interval = setInterval(goToNext, 3000); // Change slide every 3 seconds
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [currentIndex]);
 
   return (
     <div

@@ -14,7 +14,7 @@ const workContent = [
 export default function OurWork() {
   return (
     <div className="w-full bg-primary px-4 sm:px-10 lg:px-20 py-10">
-      <Title alignment="center" title="Our Work" />
+      <Title alignment="center" title2="" code="#007bff" title1="Our Work" />
       <div className="flex flex-col lg:flex-row max-lg:px-10 font-clash w-full gap-10">
         <div className="flex flex-col w-full lg:w-1/2 gap-3 text-left">
           <h1 className="text-2xl lg:text-3xl font-medium">Title</h1>
