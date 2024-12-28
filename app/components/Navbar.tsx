@@ -51,24 +51,29 @@ export const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-10 text-lg font-semibold">
-          {navItems.map((item: NavItem, index) => (
-            <Link
-              key={index}
-              href={item.link}
-              onClick={() => handleClick(item.link)}
-              className={`group ${item.link === pathName ? "text-accent" : "text-secondary-4"
-                } transition duration-200 hover:scale-95`}
-            >
-              {item.title}
-              <div
-                className={`h-[2px] w-full transition-transform duration-300 ${item.link === pathName
-                  ? "bg-accent scale-x-100"
-                  : "scale-x-0 group-hover:scale-x-100 bg-accent"
-                  }`}
-              ></div>
-            </Link>
-          ))}
+        <div className="hidden md:flex uppercase space-x-10 text-lg font-semibold">
+          {navItems.map((item: NavItem, index) => {
+            let color = '#8f98ff'
+            if (index == 2)
+              color = '#3b3b3b'
+            return (
+              <Link
+                key={index}
+                href={item.link}
+                onClick={() => handleClick(item.link)}
+                className={`group ${item.link === pathName ? "text-accent" : "text-secondary-4"
+                  } transition duration-200 hover:scale-95`}
+              >
+                {item.title}
+                <div
+                  className={`h-[2px] w-full transition-transform duration-300 ${item.link === pathName
+                    ? "bg-[#8f98ff] scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100 bg-accent"
+                    }`}
+                ></div>
+              </Link>
+            )
+          })}
         </div>
       </div>
 

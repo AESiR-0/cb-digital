@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Title from "../Title";
 
 const plans = [
     {
@@ -44,21 +45,27 @@ const plans = [
 export default function ServicePlans() {
     return (
         <div className="py-10 px-5 md:px-10 lg:px-20">
-            <h2 className="text-xl w-full flex justify-center   text-center mb-10"> <span className=" bg-secondary rounded-xl p-3 px-5 font-bold ">Service Plans</span></h2>
-            <div className="flex flex-col lg:flex-row justify-center gap-10">
+            <div className="text-xl w-full flex justify-center text-center mb-10">
+                <Title alignment="center" code="#a9e8bb" title1="Content Buffet" title2="" />
+            </div>
+            <div className="service-plans grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {plans.map((plan, index) => (
-                    <div key={index} className={`flex flex-col items-center p-8 rounded-lg shadow-lg ${index === 1 ? 'rounded-xl border border-white' : ''}`}>
-                        <h3 className="text-5xl  mb-5">{plan.title}</h3>
+                    <div key={index} className={`flex flex-col items-center p-8 rounded-lg shadow-lg ${index === 1 ? 'rounded-xl border border-[#a9e8bb]' : ''}`}>
+                        <h3 className="text-5xl font-bold mb-5">{plan.title}</h3>
                         <p className="text-center mb-6">{plan.description}</p>
                         <ul className="list-none mb-6">
                             {plan.features.map((feature, idx) => (
                                 <li key={idx} className="flex items-center mb-8">
-                                    <span className="mr-2">✔️</span>
+                                    <span className="mr-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#a9e8bb">
+                                            <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                        </svg>
+                                    </span>
                                     {feature}
                                 </li>
                             ))}
                         </ul>
-                        <button className="px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-secondary transition">
+                        <button className="px-6 py-2 border border-white text-white rounded-full hover:bg-[#a9e8bb] hover:text-secondary transition">
                             Book a Call
                         </button>
                     </div>

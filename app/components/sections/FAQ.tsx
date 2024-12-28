@@ -38,10 +38,10 @@ export default function FAQ() {
     };
 
     return (
-        <div className="faq-section container mx-auto py-8">
+        <div className="faq-section px-5 md:px-10 lg:px-20 py-8">
             <h2 className="text-3xl font-bold mb-6 text-center text-white">Any Questions?</h2>
             {faqData.map((item, index) => (
-                <div key={index} className="mb-10 px-40">
+                <div key={index} className="mb-10">
                     <button
                         className="w-full text-left p-4 bg-[#3b3b3b] text-white rounded-md"
                         onClick={() => toggleAccordion(index)}
