@@ -19,14 +19,14 @@ interface nav {
 
 export default function Footer() {
   return (
-    <div className="fixed z-10 py-10 bg-[#101010] block bottom-0  w-full ">
+    <div className="fixed z-10  py-10 bg-[#101010] block bottom-0  w-full ">
       <footer className=" font-clash  text-white w-full h-full flex justify-center items-center">
         <div className="flex flex-col items-center  justify-center w-screen gap-5">
           <h1 className="text-[10rem] font-tan">CB Digital</h1>
           <span className="w-1/2 h-1 bg-white"></span>
 
           {/* Social Icons and Navigation Links */}
-          <div className="flex flex-col md:flex-row justify-between w-full items-center md:items-start gap-10 mt-10">
+          <div className="flex px-10 flex-col md:flex-row justify-between w-full items-center md:items-start gap-10 mt-10">
             {/* Social Media Icons */}
             <div className="flex gap-5 justify-center items-center">
               <Link href={"https://instagram.com"} target="_blank">
