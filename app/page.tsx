@@ -27,9 +27,9 @@ export default function Home() {
       <div className="flex px-5 md:px-20 mb-20 -mt-5 items-end justify-end">
         <RoundedButton size="3xl" section="home" text="Say Hi!" />
       </div>
-      <div className="animate-slideUp">
-        <ClientMarquee />
-      </div>
+
+      <ClientMarquee />
+
       <div className="animate-slideUp">
         <About />
       </div>
