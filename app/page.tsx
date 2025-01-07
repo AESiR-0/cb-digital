@@ -45,9 +45,9 @@ export default function Home() {
       <div className="animate-slideUp">
         <Testimonials />
       </div>
-      <div className="animate-slideUp">
+      {/* <div className="animate-slideUp">
         <FAQ />
-      </div>
+      </div> */}
     </div>
   );
 }
