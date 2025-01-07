@@ -7,7 +7,6 @@ import { gsap } from "gsap";
 import client1 from "@/public/static/client/6.png";
 import client2 from "@/public/static/client/7.png";
 import client3 from "@/public/static/client/8.png";
-import client4 from "@/public/static/client/9.png";
 import client5 from "@/public/static/client/10.png";
 import client6 from "@/public/static/client/11.png";
 import client7 from "@/public/static/client/12.png";
@@ -17,23 +16,24 @@ import client10 from "@/public/static/client/Level Supermind.png";
 import client11 from "@/public/static/client/AT.png";
 import client12 from "@/public/static/client/Ashneer Grover.png";
 
-const clientImages = [
-    client1,
-    client2,
-    client3,
-    client4,
-    client5,
-    client6,
-    client7,
-    client8,
-    client9,
-    client10,
-    client11,
-    client12,
+// Client data with names
+const clients = [
+    { image: client3, name: "AB De Villiers" },
+    { image: client6, name: "Mahdi Shafiei" },
+    { image: client9, name: "Sharan Hegde" },
+    { image: client11, name: "Amish Tripathi" },
+    { image: client12, name: "Ashneer Grover" },
+    { image: client1, name: "Rigi" },
+    { image: client2, name: "Sugar Fit" },
+    { image: client5, name: "Think School" },
+    { image: client7, name: "Prachayam" },
+    { image: client8, name: "WTF is Podcast" },
+    { image: client10, name: "Level Supermind" },
 ];
 
 export default function ClientMarquee() {
     const marqueeRef = useRef(null);
+    const marqueeAnimation = useRef(null);
 
     useEffect(() => {
         const marquee = marqueeRef.current;
@@ -50,16 +50,29 @@ export default function ClientMarquee() {
         }
 
         // GSAP animation for infinite marquee
-        gsap.to(marquee, {
+        marqueeAnimation.current = gsap.to(marquee, {
             x: `-=${totalWidth}`, // Move by total width
             duration: 100, // Adjust scrolling speed
             repeat: -1, // Infinite loop
             ease: "linear",
         });
+
+        return () => {
+            // Cleanup animation
+            if (marqueeAnimation.current) marqueeAnimation.current.kill();
+        };
     }, []);
 
+    // Pause and resume animation on hover
+    const handleMouseEnter = () => marqueeAnimation.current.pause();
+    const handleMouseLeave = () => marqueeAnimation.current.resume();
+
     return (
-        <div className="overflow-hidden py-4 px-4 lg:px-20 flex justify-center items-center   group relative">
+        <div
+            className="overflow-hidden py-4 px-4 lg:px-20 flex justify-center items-center group relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <div
                 className="overflow-hidden inset-0 bg-gradient-to-r w-[60vw] from-secondary-1/2 via-transparent to-secondary"
             ></div>
@@ -68,33 +81,24 @@ export default function ClientMarquee() {
                 ref={marqueeRef}
                 style={{ willChange: "transform" }}
             >
-                {clientImages.map((image, index) => (
+                {clients.map((client, index) => (
                     <div
                         key={index}
-                        className="flex-shrink-0 hover:shadow-lg transition-all duration-300 ease-in-out hover:shadow-primary w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] overflow-hidden rounded-full shadow-lg"
+                        className="flex-shrink-0 text-center space-y-2"
                     >
-                        <Image
-                            src={image}
-                            alt={`Client ${index + 1}`}
-                            width={150}
-                            height={150}
-                            className="object-cover w-full h-full"
-                            priority={index < 12} // Prioritize the first batch
-                        />
-                    </div>
-                ))} {clientImages.map((image, index) => (
-                    <div
-                        key={index}
-                        className="flex-shrink-0 hover:shadow-lg transition-all duration-300 ease-in-out hover:shadow-primary w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] overflow-hidden rounded-full shadow-lg"
-                    >
-                        <Image
-                            src={image}
-                            alt={`Client ${index + 1}`}
-                            width={150}
-                            height={150}
-                            className="object-cover w-full h-full"
-                            priority={index < 12} // Prioritize the first batch
-                        />
+                        <div className="hover:shadow-lg transition-all duration-300 ease-in-out hover:shadow-primary w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] overflow-hidden rounded-full shadow-lg mx-auto">
+                            <Image
+                                src={client.image}
+                                alt={client.name}
+                                width={150}
+                                height={150}
+                                className="object-cover w-full h-full"
+                                priority={index < 12} // Prioritize the first batch
+                            />
+                        </div>
+                        <p className="text-sm lg:text-base font-medium text-gray-100">
+                            {client.name}
+                        </p>
                     </div>
                 ))}
             </div>
