@@ -32,13 +32,13 @@ const clients = [
 ];
 
 export default function ClientMarquee() {
-    const marqueeRef = useRef(null);
-    const marqueeAnimation = useRef(null);
+    const marqueeRef = useRef<HTMLDivElement>(null);
+    const marqueeAnimation = useRef<gsap.core.Tween | null>(null);
 
     useEffect(() => {
         const marquee = marqueeRef.current;
+        if (!marquee) return;
 
-        // Calculate the total width for scrolling
         const totalWidth = marquee.scrollWidth;
         const cloneCount = Math.ceil(window.innerWidth / totalWidth);
 
@@ -51,21 +51,19 @@ export default function ClientMarquee() {
 
         // GSAP animation for infinite marquee
         marqueeAnimation.current = gsap.to(marquee, {
-            x: `-=${totalWidth}`, // Move by total width
-            duration: 100, // Adjust scrolling speed
-            repeat: -1, // Infinite loop
+            x: `-=${totalWidth}`,
+            duration: 100,
+            repeat: -1,
             ease: "linear",
         });
 
         return () => {
-            // Cleanup animation
-            if (marqueeAnimation.current) marqueeAnimation.current.kill();
+            marqueeAnimation.current?.kill();
         };
     }, []);
 
-    // Pause and resume animation on hover
-    const handleMouseEnter = () => marqueeAnimation.current.pause();
-    const handleMouseLeave = () => marqueeAnimation.current.resume();
+    const handleMouseEnter = () => marqueeAnimation.current?.pause();
+    const handleMouseLeave = () => marqueeAnimation.current?.resume();
 
     return (
         <div

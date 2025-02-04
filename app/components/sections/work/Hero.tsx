@@ -30,7 +30,7 @@ export default function Hero() {
           <span
             className="text-gradient blue inline-block pl-5 pb-1"
             style={{
-              background: `linear-gradient(90deg,#8f98ff 1%, ${hexToRGBA('#8f98ff' || " ")} 1% -2.96%, rgba(105, 114, 222, 0) 97.04%)`,
+              background: `linear-gradient(90deg,#8f98ff 1%, ${hexToRGBA('#8f98ff')} 1% -2.96%, rgba(105, 114, 222, 0) 97.04%)`,
               backgroundPosition: "0% 0%",
               backgroundSize: "100%",
               lineHeight: "0.9",
@@ -38,12 +38,12 @@ export default function Hero() {
           >
             Our
           </span>
-          
+
 
           <span
             className="text-gradient blue inline-block pl-5 pb-1"
             style={{
-              background: `linear-gradient(90deg,#8f98ff 1%, ${hexToRGBA('#8f98ff' || " ")} 1% -2.96%, rgba(105, 114, 222, 0) 97.04%)`,
+              background: `linear-gradient(90deg,#8f98ff 1%, ${hexToRGBA('#8f98ff')} 1% -2.96%, rgba(105, 114, 222, 0) 97.04%)`,
               backgroundPosition: "0% 0%",
               backgroundSize: "100%",
               lineHeight: "0.9",
