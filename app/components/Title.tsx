@@ -34,7 +34,7 @@ export default function Title({
 
   return (
     <h1
-      className={`my-10 text-center font-clash text-[6.5rem] font-bold text-${alignment} uppercase animate-slide-up-fade-in`}
+      className={`my-10 text-center font-clash text-[6.5rem] max-md:text-[3.5rem] font-bold max-md:text-left text-${alignment} uppercase animate-slide-up-fade-in`}
     >
       <span
         className="text-gradient blue inline-block pl-5 pb-1"

@@ -57,7 +57,7 @@ export default function ContentApproach() {
           Crafted Content Approach
         </h2>
         <p className="text-lg lg:text-xl w-full mb-10 lg:mb-0 px-5 md:px-10">
-          At CB Digital, we swiftly address any mishaps by previous agencies and tackle large-scale projects with expertise and precision.
+          At Team K, we swiftly address any mishaps by previous agencies and tackle large-scale projects with expertise and precision.
         </p>
       </div>
       <div className="flex flex-wrap justify-center gap-10 lg:gap-24 text-2xl lg:text-3xl w-full">

@@ -55,7 +55,7 @@ export default function Hero() {
 
       {/* Description Section */}
       <div className="w-full md:w-1/2 px-5 md:px-10 md:text-3xl text-lg sm:text-3xl font-clash text-center md:text-left mt-6 md:mt-0">
-        At CB Digital, we craft content that clicks—literally. From concept to final cut, we create videos, reels, and more that amplify your message, engage your audience, and leave a lasting impact.
+        At Team K, we craft content that clicks—literally. From concept to final cut, we create videos, reels, and more that amplify your message, engage your audience, and leave a lasting impact.
       </div>
     </div>
   );

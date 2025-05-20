@@ -16,7 +16,7 @@ const tan = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "CB Digital ",
+  title: "Team K ",
   description: "A media agency that creates professional podcasts.",
 };
 

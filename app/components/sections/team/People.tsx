@@ -7,7 +7,7 @@ export default function Team() {
     <div className="h-full bg-secondary w-full flex flex-col px-5 md:px-20 lg:px-40 xl:px-80 py-10 items-center">
       <h1 className="text-center lg:text-right font-thin text-3xl md:text-5xl leading-snug">
         Meet the people behind <br />
-        <span className="font-bold font-tan">CB Digital</span>
+        <span className="font-bold font-tan">Team K</span>
       </h1>
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 xl:gap-40 mt-10 w-full items-center lg:items-start">
         {/* Pratik Garg's Section */}
@@ -17,7 +17,7 @@ export default function Team() {
             width={350}
             height={350}
             src={pratik}
-            alt="CB DIGITAL Co-founder Pratik Garg"
+            alt="Team K Co-founder Pratik Garg"
             className="rounded-full mt-5"
           />
           <h3 className="font-bold text-xl md:text-2xl pt-5">Co-Founder</h3>
@@ -34,7 +34,7 @@ export default function Team() {
             width={350}
             height={350}
             src={kk}
-            alt="CB DIGITAL Co-founder KrishnKant Nigam"
+            alt="Team K Co-founder KrishnKant Nigam"
             className="rounded-full mt-5"
           />
           <h3 className="font-bold text-xl md:text-2xl pt-5">Co-Founder</h3>
