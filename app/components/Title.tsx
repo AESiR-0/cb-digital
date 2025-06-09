@@ -31,7 +31,7 @@ export default function Title({
   alignment: string;
 }) {
 
-
+  code = "#FF0000";
   return (
     <h1
       className={`my-10 text-center font-clash text-[6.5rem] max-md:text-[3.5rem] font-bold max-md:text-left text-${alignment} uppercase animate-slide-up-fade-in`}

@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import Logo from "@/public/static/logo_no_bg.png";
 
 const navItems = [
   { title: "Home", id: "hero" },
@@ -32,12 +34,23 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="w-screen items-center text-white z-50 py-5 flex justify-between overflow-hidden px-5 md:px-20 bg-secondary-2">
-        <div className="flex items-center my-1 justify-between w-full md:w-auto">
-          <span className="font-tan py-2 text-2xl">Team K</span>
-          <button className="md:hidden" onClick={toggleMenu}>
+      <div className="w-screen items-center text-white z-50   flex justify-between overflow-hidden px-4 sm:px-6 md:px-8 lg:px-20 bg-secondary-2">
+        <div className="flex items-center justify-between w-full md:w-auto">
+          <div className="w-[120px] sm:w-[150px] md:w-[100px] h-auto">
+            <Image
+              src={Logo}
+              alt="Team K Logo"
+              className="w-full h-full object-contain"
+              priority
+            />
+          </div>
+          <button 
+            className="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors" 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -54,12 +67,12 @@ export const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden font-semibold md:flex space-x-8">
+        <div className="hidden font-semibold md:flex space-x-6 lg:space-x-8">
           {navItems.map((item: NavItem, index) => (
             <button
               key={index}
               onClick={() => scrollToSection(item.id)}
-              className="group text-secondary-4 transition duration-200 hover:scale-95 uppercase tracking-wider"
+              className="group text-secondary-4 transition duration-200 hover:scale-95 uppercase tracking-wider text-sm lg:text-base"
             >
               {item.title}
               <div className="h-[2px] w-full transition-transform duration-300 scale-x-0 group-hover:scale-x-100 bg-accent"></div>
@@ -75,7 +88,7 @@ export const Navbar = () => {
             <button
               key={index}
               onClick={() => scrollToSection(item.id)}
-              className="block text-secondary-4 transition duration-200 hover:scale-95 w-full text-left uppercase tracking-wider"
+              className="block text-secondary-4 transition duration-200 hover:scale-95 w-full text-left uppercase tracking-wider text-sm"
             >
               {item.title}
             </button>

@@ -21,7 +21,7 @@ const content = [
 
 export default function Testimonials() {
   return (
-    <div className="bg-primary rounded-b py-10 px-4 sm:px-6 lg:px-8">
+    <div className="bg-primary rounded-b h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
       <Title alignment="center" code="#cccccc" title2="" title1="Testimonials" />
       <div className="w-full max-w-screen-lg mx-auto py-6 sm:py-8 lg:py-10">
         <Carousel section="testimonials" content={content} />

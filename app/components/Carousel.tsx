@@ -46,7 +46,7 @@ export default function Carousel({
   return (
     <div
       {...handlers}
-      className="relative h-[50vh] md:h-[60vh] lg:h-[50vh] font-clash text-left w-full  overflow-hidden"
+      className="relative  font-clash text-left w-full  overflow-hidden"
     >
       {/* Carousel content */}
       <div

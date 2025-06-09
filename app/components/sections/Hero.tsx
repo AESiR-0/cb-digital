@@ -18,7 +18,7 @@ export default function Hero({
   return (
     <div className="w-full min-h-[75vh] max-md:min-h-[35vh] py-6 sm:py-10 gap-6 sm:gap-10 md:gap-40 text-center bg-primary justify-center flex items-center overflow-hidden px-4 sm:px-6 md:px-8 lg:px-20">
       <div className="w-full max-w-[1000px] h-fit leading-none text-white">
-        <Title code="#8f98ff" alignment="center" title1={title1} title2={title2} />
+        <Title code="#FF0000" alignment="center" title1={title1} title2={title2} />
         <h5 className="text-lg sm:text-xl md:text-2xl lg:text-[32px] animate-slide-up-fade-in normal-case my-2 sm:my-3 tracking-wider font-clash font-semibold leading-none">
           {subheading}
         </h5>

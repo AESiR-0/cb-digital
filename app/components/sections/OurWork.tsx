@@ -1,11 +1,10 @@
 "use client"
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
 import Title from "../Title";
-import { useSwipeable } from "react-swipeable";
-import placeholder from "@/public/static/work/placeholder.png";
+import Image from "next/image";
 
-// Import work content from Work.tsx
+const placeholderLogo = "/static/work/placeholder.png";
+
 const workContent = [
   {
     title: "Podcasts",
@@ -16,7 +15,8 @@ const workContent = [
       "https://www.youtube.com/embed/t8woniGx3x0",
       "https://www.youtube.com/embed/un3--vdM4bE",
       "https://www.youtube.com/embed/sH5NelKJhG4",
-    ]
+    ],
+    images: [placeholderLogo],
   },
   {
     title: "Shorts & Reels",
@@ -37,7 +37,8 @@ const workContent = [
       "https://www.youtube.com/embed/h5lpQBsDDZI",
       "https://www.youtube.com/embed/wsZJyGYXmIs",
       "https://www.youtube.com/embed/6cq68BcdUdU",
-    ]
+    ],
+    images: [placeholderLogo],
   },
   {
     title: "Vlogs",
@@ -48,7 +49,8 @@ const workContent = [
       "https://www.instagram.com/reel/C1mzBg1IHRa/embed",
       "https://www.instagram.com/reel/DAscYgLKT6g/embed",
       "https://www.instagram.com/reel/CydGmYey9Ml/embed",
-    ]
+    ],
+    images: [placeholderLogo],
   },
   {
     title: "PM Ads",
@@ -59,95 +61,59 @@ const workContent = [
       "https://www.youtube.com/embed/KFt7L0WQmPo",
       "https://www.youtube.com/embed/cA7IHF3Ar2s",
       "https://www.youtube.com/embed/WuVB-4OOceY",
-    ]
+    ],
+    images: [placeholderLogo],
   }
 ];
 
+// Flatten all videos with their parent info
+const allVideos = workContent.flatMap(item =>
+  (item.videos || []).map((video, idx) => ({
+    video,
+    title: item.title,
+    description: item.content,
+    logo: item.images && item.images.length > 0 ? item.images[0] : placeholderLogo,
+  }))
+);
+
 export default function OurWork() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % workContent.length);
-  };
-
-  const goToPrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + workContent.length) % workContent.length);
-  };
-
-  const handlers = useSwipeable({
-    onSwipedLeft: goToNext,
-    onSwipedRight: goToPrev,
-    trackMouse: true,
-  });
-
-  const currentWork = workContent[currentIndex];
-
   return (
     <div className="w-full bg-primary px-4 sm:px-6 md:px-8 lg:px-20 py-6 sm:py-10">
       <Title alignment="center" title2="" code="#007bff" title1="Our Work" />
-      
-      <div {...handlers} className="relative w-full">
-        <div className="flex flex-col lg:flex-row max-lg:px-4 font-clash w-full gap-4 sm:gap-6 md:gap-10">
-          <div className="flex flex-col w-full gap-2 sm:gap-3 text-left">
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium">{currentWork.title}</h1>
-            <p className="font-thin text-sm sm:text-base md:text-lg lg:text-xl">{currentWork.category}</p>
-            <p className="text-sm sm:text-base md:text-lg mb-3 sm:mb-4">{currentWork.content}</p>
-            
-            {currentWork.videos ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-                {currentWork.videos.map((video, index) => (
-                  <div key={index} className="aspect-video">
-                    <iframe
-                      src={video}
-                      title={`${currentWork.title} ${index + 1}`}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full rounded-lg"
-                    />
-                  </div>
-                ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8 mt-10">
+        {allVideos.map((item, idx) => (
+          <div key={idx} className=" shadow-[0_40_0px_rgba(255,0,0,0.2)]  rounded-xl overflow-hidden flex flex-col">
+            <div className="relative w-full aspect-video bg-[#010101] ">
+              <iframe
+                src={item.video}
+                title={`Work Video ${idx + 1}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+              {/* Play overlay (optional, for style) */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-14 h-14 bg-white/70 rounded-full flex items-center justify-center">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="#010101"><path d="M8 5v14l11-7z"/></svg>
+                </div>
               </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-                {currentWork.images?.map((image, index) => (
-                  <Image
-                    key={index}
-                    alt={`${currentWork.title} ${index + 1}`}
-                    src={image}
-                    height={400}
-                    width={580}
-                    className="rounded-lg w-full h-full object-cover"
-                  />
-                ))}
+            </div>
+            <div className="flex items-center gap-4 p-4">
+              <Image
+                src={item.logo}
+                alt="Logo"
+                width={48}
+                height={48}
+                className="rounded-full bg-white border border-gray-200 shadow"
+              />
+              <div className="flex-1 ">
+                <div className="font-bold text-white text-lg leading-tight mb-1">{item.title}</div>
+                <div className="text-sm leading-snug font-medium">{item.description}</div>
               </div>
-            )}
+            </div>
           </div>
-        </div>
-
-        {/* Navigation buttons */}
-        <button
-          onClick={goToPrev}
-          className="absolute h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 left-2 sm:left-4 flex justify-center items-center top-1/2 -translate-y-1/2 bg-white text-black rounded-full text-sm sm:text-base"
-        >
-          &#10094;
-        </button>
-        <button
-          onClick={goToNext}
-          className="absolute h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 right-2 sm:right-4 flex justify-center items-center top-1/2 -translate-y-1/2 bg-white text-black rounded-full text-sm sm:text-base"
-        >
-          &#10095;
-        </button>
-
-        {/* Indicator dots */}
-        <div className="absolute bottom-3 sm:bottom-4 md:bottom-5 left-1/2 -translate-x-1/2 flex space-x-1.5 sm:space-x-2">
-          {workContent.map((_, index) => (
-            <div
-              key={index}
-              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-gray-300"}`}
-            />
-          ))}
-        </div>
+        ))}
       </div>
     </div>
   );

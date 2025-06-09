@@ -5,7 +5,7 @@ import About from "./components/sections/About";
 import OurWork from "./components/sections/OurWork";
 import Testimonials from "./components/sections/Testimonials";
 import ClientMarquee from "./components/ClientMarquee";
-import ContentApproach from "./components/sections/team/ContentApproach";
+import ContentStats from "./components/sections/team/ContentStats";
 import ServicePlans from "./components/sections/ServicePlans";
 import FAQ from "./components/sections/FAQ";
 
@@ -39,21 +39,18 @@ export default function Home() {
         <OurWork />
       </section>
 
-      <section id="services" className="animate-slideUp">
+      {/* <section id="services" className="animate-slideUp">
         <ServicePlans />
-      </section>
+      </section> */}
 
       <section id="team" className="animate-slideUp">
-        <ContentApproach />
+        <ContentStats />
       </section>
 
       <section id="testimonials" className="animate-slideUp">
         <Testimonials />
       </section>
 
-      {/* <section id="faq" className="animate-slideUp">
-        <FAQ />
-      </section> */}
     </div>
   );
 }

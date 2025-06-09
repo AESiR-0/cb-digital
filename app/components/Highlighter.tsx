@@ -28,7 +28,7 @@ export default function Title({
     code: string;
     alignment: string;
 }) {
-
+    code = "#FF0000";
 
     return (
         <h1

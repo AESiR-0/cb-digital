@@ -34,7 +34,6 @@ export default function RootLayout({
         <div className=" h-full main font-clash relative z-20 bg-primary   text-white  w-full border-b-transparent rounded-b-3xl">
           {children}
         </div>
-        <div className="h-[70vh] z-0   bg-transparent"></div>
         <Footer />
       </body>
     </html>

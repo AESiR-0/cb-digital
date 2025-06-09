@@ -62,14 +62,14 @@ export default function ContentApproach() {
       </div>
       <div className="flex flex-wrap justify-center gap-10 lg:gap-24 text-2xl lg:text-3xl w-full">
         {contentApproachData.map((data, index) => (
-          <div key={index} className="flex flex-col items-center">
+          <div key={index} className="flex flex-col items-center hover:cursor-pointer hover:scale-105 transition-transform duration-300">
             <h6 className="text-4xl lg:text-5xl font-light mb-1 lg:mb-4">
-              <span className="inline-block font-bold tracking-wider text-center">
+              <span className="inline-block font-bold tracking-wider text-center drop-shadow-[0_0_10px_rgba(255,0,0,0.3)]">
                 {data.text === 'Views' ? `${counts[index]}B` : `${counts[index]}`}
-                <span className="text-[#785dc8] pl-1">+</span>
+                <span className="text-[#FF0000] pl-1 drop-shadow-[0_0_15px_rgba(255,0,0,0.5)]">+</span>
               </span>
             </h6>
-            <p className="font-bold text-[#785dc8] text-base lg:text-xl text-center">
+            <p className="font-bold text-[#FF0000] text-base lg:text-xl text-center drop-shadow-[0_0_8px_rgba(255,0,0,0.4)]">
               {data.text}
             </p>
           </div>

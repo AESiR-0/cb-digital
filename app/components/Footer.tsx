@@ -5,6 +5,7 @@ import Image from "next/image";
 import Instagram from "@/public/static/socials/Instagram.png";
 import Facebook from "@/public/static/socials/Facebook.png";
 import Linkedin from "@/public/static/socials/LinkedIn.png";
+import Logo from "@/public/static/logo_no_bg.png";
 
 const navItems = [
   { title: "home", id: "hero" },
@@ -29,9 +30,16 @@ export default function Footer() {
 
   return (
     <div className="relative z-10 py-6 sm:py-8 md:py-10 bg-[#101010] w-full">
-      <footer className="font-clash text-white w-full h-full flex justify-center items-center">
+      <footer className="font-clash text-white w-full  flex justify-center items-center">
         <div className="flex flex-col items-center justify-center w-full max-w-[90vw] gap-3 sm:gap-4 md:gap-5">
-          <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] font-tan leading-none">Team K</h1>
+          <div className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] h-auto">
+            <Image
+              src={Logo}
+              alt="Team K Logo"
+              className="w-full h-full object-contain"
+              priority
+            />
+          </div>
           <span className="w-1/2 h-[1px] bg-white"></span>
 
           {/* Social Icons and Navigation Links */}
