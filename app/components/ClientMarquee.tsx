@@ -16,19 +16,38 @@ import client10 from "@/public/static/client/Level Supermind.png";
 import client11 from "@/public/static/client/AT.png";
 import client12 from "@/public/static/client/Ashneer Grover.png";
 
-// Client data with names
+// Client data with names and brand colors
 const clients = [
-    { image: client3, name: "AB De Villiers" },
-    { image: client6, name: "Mahdi Shafiei" },
-    { image: client9, name: "Sharan Hegde" },
-    { image: client11, name: "Amish Tripathi" },
-    { image: client12, name: "Ashneer Grover" },
-    { image: client1, name: "Rigi" },
-    { image: client2, name: "Sugar Fit" },
-    { image: client5, name: "Think School" },
-    { image: client7, name: "Prachayam" },
-    { image: client8, name: "WTF is Podcast" },
-    { image: client10, name: "Level Supermind" },
+    { 
+        image: client1, 
+        name: "Rigi",
+        shadow: "shadow-[0_0_30px_rgba(59,130,246,0.3)]" // blue glow
+    },
+    { 
+        image: client2, 
+        name: "Sugar Fit",
+        shadow: "shadow-[0_0_30px_rgba(16,185,129,0.3)]" // emerald glow
+    },
+    { 
+        image: client5, 
+        name: "Think School",
+        shadow: "shadow-[0_0_30px_rgba(245,158,11,0.3)]" // amber glow
+    },
+    { 
+        image: client7, 
+        name: "Prachayam",
+        shadow: "shadow-[0_0_30px_rgba(239,68,68,0.3)]" // red glow
+    },
+    { 
+        image: client8, 
+        name: "WTF is Podcast",
+        shadow: "shadow-[0_0_30px_rgba(139,92,246,0.3)]" // violet glow
+    },
+    { 
+        image: client10, 
+        name: "Level Supermind",
+        shadow: "shadow-[0_0_30px_rgba(6,182,212,0.3)]" // cyan glow
+    },
 ];
 
 export default function ClientMarquee() {
@@ -67,36 +86,37 @@ export default function ClientMarquee() {
 
     return (
         <div
-            className="overflow-hidden py-4 px-4 lg:px-20 flex justify-center items-center group relative"
+            className="overflow-hidden py-8 px-4 lg:px-20 flex justify-center items-center group relative"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
+            <div className="overflow-hidden inset-0 bg-gradient-to-r w-[60vw] from-secondary-1/2 via-transparent to-secondary"></div>
             <div
-                className="overflow-hidden inset-0 bg-gradient-to-r w-[60vw] from-secondary-1/2 via-transparent to-secondary"
-            ></div>
-            <div
-                className="flex space-x-6 lg:space-x-10"
+                className="flex space-x-8 lg:space-x-16"
                 ref={marqueeRef}
                 style={{ willChange: "transform" }}
             >
                 {clients.map((client, index) => (
                     <div
                         key={index}
-                        className="flex-shrink-0 text-center space-y-2"
+                        className="flex-shrink-0 text-center relative"
                     >
-                        <div className="hover:shadow-lg transition-all duration-300 ease-in-out hover:shadow-primary w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] overflow-hidden rounded-full shadow-lg mx-auto">
+                        <div className={`
+                            relative
+                            w-[120px] h-[120px] 
+                            rounded-full
+                            overflow-hidden
+                            ${client.shadow}
+                        `}>
                             <Image
                                 src={client.image}
                                 alt={client.name}
-                                width={150}
-                                height={150}
-                                className="object-cover w-full h-full"
-                                priority={index < 12} // Prioritize the first batch
+                                width={180}
+                                height={180}
+                                className="w-full object-fill mix-blend-ligthen rounded-full h-full"
+                                priority={index < 12}
                             />
                         </div>
-                        <p className="text-sm lg:text-base font-medium text-gray-100">
-                            {client.name}
-                        </p>
                     </div>
                 ))}
             </div>

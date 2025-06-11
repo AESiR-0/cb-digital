@@ -74,46 +74,48 @@ const allVideos = workContent.flatMap(item =>
     description: item.content,
     logo: item.images && item.images.length > 0 ? item.images[0] : placeholderLogo,
   }))
-);
+).slice(0, 6); // Limit to 6 items
 
 export default function OurWork() {
   return (
-    <div className="w-full bg-primary px-4 sm:px-6 md:px-8 lg:px-20 py-6 sm:py-10">
+    <div className="w-ful l bg-primary px-4 sm:px-6 md:px-8 lg:px-20 py-6 sm:py-10">
       <Title alignment="center" title2="" code="#007bff" title1="Our Work" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8 mt-10">
-        {allVideos.map((item, idx) => (
-          <div key={idx} className=" shadow-[0_40_0px_rgba(255,0,0,0.2)]  rounded-xl overflow-hidden flex flex-col">
-            <div className="relative w-full aspect-video bg-[#010101] ">
-              <iframe
-                src={item.video}
-                title={`Work Video ${idx + 1}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-              {/* Play overlay (optional, for style) */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-14 h-14 bg-white/70 rounded-full flex items-center justify-center">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="#010101"><path d="M8 5v14l11-7z"/></svg>
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
+          {allVideos.map((item, idx) => (
+            <div key={idx} className="shadow-[0_40_0px_rgba(255,0,0,0.2)] rounded-xl overflow-hidden flex flex-col">
+              <div className="relative w-full aspect-video bg-[#010101]">
+                <iframe
+                  src={item.video}
+                  title={`Work Video ${idx + 1}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+                {/* Play overlay (optional, for style) */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="#010101"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-3">
+                <Image
+                  src={item.logo}
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                  className="rounded-full bg-white border border-gray-200 shadow"
+                />
+                <div className="flex-1">
+                  <div className="font-bold text-white text-base leading-tight mb-1">{item.title}</div>
+                  <div className="text-xs leading-snug font-medium">{item.description}</div>
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-4">
-              <Image
-                src={item.logo}
-                alt="Logo"
-                width={48}
-                height={48}
-                className="rounded-full bg-white border border-gray-200 shadow"
-              />
-              <div className="flex-1 ">
-                <div className="font-bold text-white text-lg leading-tight mb-1">{item.title}</div>
-                <div className="text-sm leading-snug font-medium">{item.description}</div>
-              </div>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -67,14 +67,6 @@ const config: Config = {
   					opacity: '1'
   				}
   			},
-  			marquee: {
-  				'0%': {
-  					transform: 'translateX(-50%)'
-  				},
-  				'100%': {
-  					transform: 'translateX(100%)'
-  				}
-  			},
   			fadeIn: {
   				'0%': {
   					opacity: '0'
@@ -92,13 +84,22 @@ const config: Config = {
   					transform: 'translateY(0)',
   					opacity: '1'
   				}
+  			},
+  			marquee: {
+  				'0%': { transform: 'translateX(0%)' },
+  				'100%': { transform: 'translateX(-100%)' }
+  			},
+  			marquee2: {
+  				'0%': { transform: 'translateX(100%)' },
+  				'100%': { transform: 'translateX(0%)' }
   			}
   		},
   		animation: {
   			'slide-up-fade-in': 'slide-up-fade-in 0.5s ease-out forwards',
-  			marquee: 'marquee 10s linear infinite',
   			fadeIn: 'fadeIn 1s ease-out forwards',
-  			slideUp: 'slideUp 1s ease-out forwards'
+  			slideUp: 'slideUp 1s ease-out forwards',
+  			marquee: 'marquee 25s linear infinite',
+  			marquee2: 'marquee2 25s linear infinite'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
