@@ -1,6 +1,11 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import AB from "@/public/static/client/AB.png";
+import Mahdi from "@/public/static/client/Mahdi.png";
+import Sharan from "@/public/static/client/Sharan Hegde.png";
+import AT from "@/public/static/client/AT.png";
+import Ashneer from "@/public/static/client/Ashneer Grover.png";
 import { gsap } from "gsap";
 
 type Creator = {
@@ -12,31 +17,31 @@ type Creator = {
 
 const creators: Creator[] = [
     {
-        image: "/creators/ab.jpg",
+        image: AB.src,
         name: "AB De Villiers",
         handle: "@ABDeVilliers",
         subscribers: "2.1M subscribers"
     },
     {
-        image: "/creators/mahdi.jpg",
+        image: Mahdi.src,
         name: "Mahdi Shafiei",
         handle: "@MahdiShafiei",
         subscribers: "980K subscribers"
     },
     {
-        image: "/creators/sharan.jpg",
+        image: Sharan.src,
         name: "Sharan Hegde",
         handle: "@sharanHegde",
         subscribers: "1.2M subscribers"
     },
     {
-        image: "/creators/amish.jpg",
+        image: AT.src,
         name: "Amish Tripathi",
         handle: "@authorAmish",
         subscribers: "850K subscribers"
     },
     {
-        image: "/creators/ashneer.jpg",
+        image: Ashneer.src  ,
         name: "Ashneer Grover",
         handle: "@Ashneer_Grover",
         subscribers: "920K subscribers"
