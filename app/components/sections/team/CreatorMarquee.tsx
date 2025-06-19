@@ -1,12 +1,40 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import AB from "@/public/static/client/AB.png";
-import Mahdi from "@/public/static/client/Mahdi.png";
-import Sharan from "@/public/static/client/Sharan Hegde.png";
-import AT from "@/public/static/client/AT.png";
-import Ashneer from "@/public/static/client/Ashneer Grover.png";
 import { gsap } from "gsap";
+
+// Importing all creator images
+import KshitijSehrawat from "@/public/static/creators/Kshitij Sehrawat.png";
+import RyanFernando from "@/public/static/creators/Ryan Fernando.png";
+import ShivanshGarg from "@/public/static/creators/Shivansh Garg.png";
+import HarshGoela from "@/public/static/creators/Harsh Goela.png";
+import HimanshuAgrawal from "@/public/static/creators/Himanshu Agrawal.png";
+import DivasGupta from "@/public/static/creators/Divas Gupta.png";
+import NeerajArora from "@/public/static/creators/Neeraj Arora.png";
+import BijayGautam from "@/public/static/creators/Bijay Gautam.png";
+import SiddharthRajsekar from "@/public/static/creators/Siddharth Rajsekar.png";
+import MeghanaDixit from "@/public/static/creators/Meghana Dixit.png";
+import ShashwatAmrev from "@/public/static/creators/Shashwat Amrev.png";
+import ShivangiDesai from "@/public/static/creators/Shivangi Desai.png";
+import VishalMalkhan from "@/public/static/creators/Vishal Malkhan.png";
+import SnehDesai from "@/public/static/creators/Sneh Desai.png";
+import DrYogendraSingh from "@/public/static/creators/Dr Yogendra Singh Rathore.png";
+import VishalChourasia from "@/public/static/creators/Vishal Chourasia.png";
+import AyushShukla from "@/public/static/creators/Ayush Shukla.png";
+import MahdiShafei from "@/public/static/creators/Mahdi Shafei.png";
+import IshanSharma from "@/public/static/creators/Ishan Sharma.png";
+import AyushWadhwa from "@/public/static/creators/Ayush Wadhwa.png";
+import MeghanaMalkhan from "@/public/static/creators/Meghana Malkhan.png";
+import AmeetParekh from "@/public/static/creators/Ameet Parekh.png";
+import RajivTalreja from "@/public/static/creators/Rajiv Talreja.png";
+import ThinkSchool from "@/public/static/creators/Think School.png";
+import DrCuterus from "@/public/static/creators/Dr Cuterus.png";
+import ABDeVilliers from "@/public/static/creators/AB DeVilliers.png";
+import AakashChopra from "@/public/static/creators/Aakash Chopra.png";
+import AnkurWarikoo from "@/public/static/creators/Ankur Warikoo.png";
+import AshneerGrover from "@/public/static/creators/Ashneer Grover.png";
+import SharanHedge from "@/public/static/creators/Sharan Hedge.png";
+import AmishTripathi from "@/public/static/creators/Amish Tripathi.png";
 
 type Creator = {
     image: string;
@@ -17,34 +45,190 @@ type Creator = {
 
 const creators: Creator[] = [
     {
-        image: AB.src,
+        image: ABDeVilliers.src,
         name: "AB De Villiers",
-        handle: "@ABDeVilliers",
+        handle: "@ABDeVilliers17",
         subscribers: "2.1M subscribers"
     },
     {
-        image: Mahdi.src,
-        name: "Mahdi Shafiei",
-        handle: "@MahdiShafiei",
-        subscribers: "980K subscribers"
+        image: AnkurWarikoo.src,
+        name: "Ankur Warikoo",
+        handle: "@ankurwarikoo",
+        subscribers: "4.2M subscribers"
     },
     {
-        image: Sharan.src,
-        name: "Sharan Hegde",
-        handle: "@sharanHegde",
-        subscribers: "1.2M subscribers"
-    },
-    {
-        image: AT.src,
-        name: "Amish Tripathi",
-        handle: "@authorAmish",
-        subscribers: "850K subscribers"
-    },
-    {
-        image: Ashneer.src  ,
+        image: AshneerGrover.src,
         name: "Ashneer Grover",
         handle: "@Ashneer_Grover",
         subscribers: "920K subscribers"
+    },
+    {
+        image: AakashChopra.src,
+        name: "Aakash Chopra",
+        handle: "@cricketaakash",
+        subscribers: "3.8M subscribers"
+    },
+    {
+        image: AmishTripathi.src,
+        name: "Amish Tripathi",
+        handle: "@authoramish",
+        subscribers: "850K subscribers"
+    },
+    {
+        image: SharanHedge.src,
+        name: "Sharan Hegde",
+        handle: "@sharanhegde",
+        subscribers: "1.2M subscribers"
+    },
+    {
+        image: ThinkSchool.src,
+        name: "Think School",
+        handle: "@ThinkSchool",
+        subscribers: "2.5M subscribers"
+    },
+    {
+        image: DrCuterus.src,
+        name: "Dr. Tanaya",
+        handle: "@drcuterus",
+        subscribers: "1.8M subscribers"
+    },
+    {
+        image: KshitijSehrawat.src,
+        name: "Kshitij Sehrawat",
+        handle: "@kshitijsehrawat",
+        subscribers: "750K subscribers"
+    },
+    {
+        image: RyanFernando.src,
+        name: "Ryan Fernando",
+        handle: "@ryanfernando",
+        subscribers: "680K subscribers"
+    },
+    {
+        image: ShivanshGarg.src,
+        name: "Shivansh Garg",
+        handle: "@shivanshgarg",
+        subscribers: "520K subscribers"
+    },
+    {
+        image: HarshGoela.src,
+        name: "Harsh Goela",
+        handle: "@harshgoela",
+        subscribers: "890K subscribers"
+    },
+    {
+        image: HimanshuAgrawal.src,
+        name: "Himanshu Agrawal",
+        handle: "@himanshuagrawal",
+        subscribers: "450K subscribers"
+    },
+    {
+        image: DivasGupta.src,
+        name: "Divas Gupta",
+        handle: "@divasgupta",
+        subscribers: "380K subscribers"
+    },
+    {
+        image: NeerajArora.src,
+        name: "Neeraj Arora",
+        handle: "@neerajarora",
+        subscribers: "620K subscribers"
+    },
+    {
+        image: BijayGautam.src,
+        name: "Bijay Gautam",
+        handle: "@bijaygautam",
+        subscribers: "290K subscribers"
+    },
+    {
+        image: SiddharthRajsekar.src,
+        name: "Siddharth Rajsekar",
+        handle: "@siddharthrajsekar",
+        subscribers: "410K subscribers"
+    },
+    {
+        image: MeghanaDixit.src,
+        name: "Meghana Dixit",
+        handle: "@meghanadixit",
+        subscribers: "340K subscribers"
+    },
+    {
+        image: ShashwatAmrev.src,
+        name: "Shashwat Amrev",
+        handle: "@shashwatamrev",
+        subscribers: "280K subscribers"
+    },
+    {
+        image: ShivangiDesai.src,
+        name: "Shivangi Desai",
+        handle: "@shivangidesai",
+        subscribers: "320K subscribers"
+    },
+    {
+        image: VishalMalkhan.src,
+        name: "Vishal Malkhan",
+        handle: "@vishalmalkhan",
+        subscribers: "260K subscribers"
+    },
+    {
+        image: SnehDesai.src,
+        name: "Sneh Desai",
+        handle: "@snehdesai",
+        subscribers: "190K subscribers"
+    },
+    {
+        image: DrYogendraSingh.src,
+        name: "Dr. Yogendra Singh",
+        handle: "@dryogendrasingh",
+        subscribers: "420K subscribers"
+    },
+    {
+        image: VishalChourasia.src,
+        name: "Vishal Chourasia",
+        handle: "@vishalchourasia",
+        subscribers: "380K subscribers"
+    },
+    {
+        image: AyushShukla.src,
+        name: "Ayush Shukla",
+        handle: "@ayushshukla",
+        subscribers: "240K subscribers"
+    },
+    {
+        image: MahdiShafei.src,
+        name: "Mahdi Shafei",
+        handle: "@mahdishafei",
+        subscribers: "180K subscribers"
+    },
+    {
+        image: IshanSharma.src,
+        name: "Ishan Sharma",
+        handle: "@ishansharma",
+        subscribers: "310K subscribers"
+    },
+    {
+        image: AyushWadhwa.src,
+        name: "Ayush Wadhwa",
+        handle: "@ayushwadhwa",
+        subscribers: "220K subscribers"
+    },
+    {
+        image: MeghanaMalkhan.src,
+        name: "Meghana Malkhan",
+        handle: "@meghanamalkhan",
+        subscribers: "270K subscribers"
+    },
+    {
+        image: AmeetParekh.src,
+        name: "Ameet Parekh",
+        handle: "@ameetparekh",
+        subscribers: "160K subscribers"
+    },
+    {
+        image: RajivTalreja.src,
+        name: "Rajiv Talreja",
+        handle: "@rajivtalreja",
+        subscribers: "330K subscribers"
     }
 ];
 
@@ -161,7 +345,7 @@ export default function CreatorMarquee() {
             gsap.set(slider, { x: 0 });
             animation.current = gsap.to(slider, {
                 x: -totalWidth,
-                duration: 40,
+                duration: 300,
                 ease: "none",
                 repeat: -1,
                 onRepeat: () => {

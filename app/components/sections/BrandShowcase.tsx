@@ -11,46 +11,46 @@ type Brand = {
 
 const brands: Brand[] = [
     { 
-        name: 'ZERODHA', 
-        category: 'FINANCE', 
-        videoUrl: '/static/showcase/zerodha.mp4',
-        activeColor: 'from-blue-500/20 to-cyan-500/20'
+        name: 'PORTER', 
+        category: 'LOGISTICS', 
+        videoUrl: '/videos/brand_showcase/porter.mp4',
+        activeColor: 'from-blue-600/20 to-blue-800/20'
     },
     { 
-        name: 'SIMPL', 
+        name: 'LITTLE JOYS', 
         category: 'FINTECH', 
-        videoUrl: '/static/showcase/simpl.mp4',
+        videoUrl: '/videos/brand_showcase/little_joys.mp4',
         activeColor: 'from-purple-500/20 to-pink-500/20'
     },
     { 
-        name: 'COMMENDA', 
-        category: 'COMPLIANCE', 
-        videoUrl: '/static/showcase/commenda.mp4',
-        activeColor: 'from-emerald-500/20 to-green-500/20'
+        name: 'POCKET FM', 
+        category: 'AUDIO ENTERTAINMENT', 
+        videoUrl: '/videos/brand_showcase/pcoket_fm.mp4',
+        activeColor: 'from-orange-500/20 to-red-500/20'
     },
     { 
-        name: 'PLUTO', 
-        category: 'AUTOMOBILE', 
-        videoUrl: '/static/showcase/pluto.mp4',
-        activeColor: 'from-orange-500/20 to-amber-500/20'
+        name: 'GROWW', 
+        category: 'INVESTMENT', 
+        videoUrl: '/videos/brand_showcase/groww.mp4',
+        activeColor: 'from-green-500/20 to-emerald-500/20'
     },
     { 
-        name: 'ARMATRIX', 
-        category: 'ROBOTICS', 
-        videoUrl: '/static/showcase/armatrix.mp4',
-        activeColor: 'from-red-500/20 to-rose-500/20'
-    },
-    { 
-        name: 'SOLO', 
-        category: 'CREATOR ECONOMY', 
-        videoUrl: '/static/showcase/solo.mp4',
-        activeColor: 'from-violet-500/20 to-indigo-500/20'
-    },
-    { 
-        name: 'WLDD', 
-        category: 'MEDIA', 
-        videoUrl: '/static/showcase/wldd.mp4',
+        name: 'COP 28 UAE', 
+        category: 'GOVERNMENT', 
+        videoUrl: '/videos/brand_showcase/cop_28_UAE.mp4',
         activeColor: 'from-teal-500/20 to-cyan-500/20'
+    },
+    { 
+        name: 'NISSAN', 
+        category: 'AUTOMOTIVE', 
+        videoUrl: '/videos/brand_showcase/nissan.mp4',
+        activeColor: 'from-red-600/20 to-red-800/20'
+    },
+    { 
+        name: 'SUGARFIT', 
+        category: 'FITNESS & WELLNESS', 
+        videoUrl: '/videos/brand_showcase/sugarfit.mp4',
+        activeColor: 'from-pink-500/20 to-rose-500/20'
     },
 ];
 

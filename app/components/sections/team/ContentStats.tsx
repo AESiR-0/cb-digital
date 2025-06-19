@@ -69,31 +69,14 @@ export default function ContentStats() {
   };
 
   return (
-    <div className="w-full h-[80vh] py-10 px-4  bg-[#171717] flex flex-col items-center">
+    <div className="w-full h-[50vh] py-10 px-4  bg-[#171717] flex flex-col justify-center items-center">
       <div 
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="w-full max-w-7xl  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-10 relative overflow-y-hidden"
+        className="w-full max-w-7xl  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-10 relative "
       >
-        {/* Global liquid glass effect */}
-        <div 
-          className="absolute pointer-events-none transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
-          style={{
-            background: 'radial-gradient(1200px circle at var(--mouse-x) var(--mouse-y), rgba(120, 119, 198, 0.15), transparent 40%)',
-            transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-            left: -600,
-            top: -600,
-            width: 1200,
-            height: 1200,
-            opacity: mousePosition.active ? 1 : 0,
-            backdropFilter: 'blur(80px)',
-          }}
-          style-ify={{
-            '--mouse-x': `${mousePosition.x}px`,
-            '--mouse-y': `${mousePosition.y}px`
-          }}
-        />
+        {/* Removed global liquid glass effect */}
         {statsData.map((stat, index) => (
           <StatCard 
             key={index} 
@@ -194,25 +177,27 @@ function StatCard({ stat, mousePosition }: { stat: StatItem; mousePosition: Mous
         overflow-hidden
         transition-all duration-300 ease-out
         group
-        hover:bg-[#252525]
-      `}
+        hover:bg-[#252525]`
+      }
       style={{
         transform: getTransform(),
         transformStyle: 'preserve-3d'
       }}
     >
-      {/* Liquid glass effect */}
+      {/* Liquid glass effect - reduced size and centered */}
       <div 
-        className="absolute inset-0 transition-all duration-300"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 pointer-events-none"
         style={{
+          width: '120%', // slightly larger than card, but not overflowing
+          height: '120%',
+          borderRadius: '2.5rem',
           background: isHovered 
-            ? `radial-gradient(circle at ${mousePos.x * 50 + 50}% ${mousePos.y * 50 + 50}%, rgba(225, 0, 0, 0.3), transparent 100%)`
+            ? `radial-gradient(circle at ${mousePos.x * 50 + 50}% ${mousePos.y * 50 + 50}%, rgba(225, 0, 0, 0.3), transparent 80%)`
             : '',
           opacity: isLeaving ? 0 : 1,
           backdropFilter: isHovered ? 'blur(20px)' : 'none',
         }}
       />
-
       {/* Content */}
       <div 
         className="relative z-10 flex flex-col items-center"
