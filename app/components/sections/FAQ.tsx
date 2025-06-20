@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SectionHeader from '../SectionHeader';
 
 const faqData = [
     {
@@ -39,7 +40,7 @@ export default function FAQ() {
 
     return (
         <div className="faq-section px-5 md:px-10 lg:px-20 py-8">
-            <h2 className="text-3xl font-bold mb-6 text-center text-white">Any Questions?</h2>
+            <SectionHeader subtitle="Need Answers?" title="FAQs" />
             {faqData.map((item, index) => (
                 <div key={index} className="mb-10">
                     <button

@@ -11,41 +11,6 @@ import ServicePlans from "./components/sections/ServicePlans";
 import FAQ from "./components/sections/FAQ";
 import BrandShowcase from "./components/sections/BrandShowcase";
 
-const FloatingCalendly = () => {
-  return (
-    <a 
-      href="https://calendly.com/freehukrishn/30min"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 z-50 bg-[#0069ff] hover:bg-[#0052cc] text-white rounded-full 
-                 overflow-hidden group transition-all duration-300 ease-out
-                 flex items-center gap-3 px-4
-                 w-[50px] hover:w-[200px] h-[50px]
-                 shadow-[0_0_20px_rgba(0,105,255,0.3)] hover:shadow-[0_0_25px_rgba(0,105,255,0.4)]"
-    >
-      <div className="flex-shrink-0 flex items-center justify-center">
-        <svg 
-          viewBox="0 0 24 24" 
-          className="w-5 h-5" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-          strokeLinecap="round" 
-          strokeLinejoin="round"
-        >
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-          <line x1="16" y1="2" x2="16" y2="6" />
-          <line x1="8" y1="2" x2="8" y2="6" />
-          <line x1="3" y1="10" x2="21" y2="10" />
-        </svg>
-      </div>
-      <span className="flex-shrink-0 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pr-4 duration-300 font-medium">
-        Launch or Scale?
-      </span>
-    </a>
-  );
-};
-
 export default function Home() {
   return (
     <div className="h-full py-5 main relative z-20 bg- text-white w-full">
@@ -67,7 +32,6 @@ export default function Home() {
       <section id="clients" className="animate-slideUp">
         <CreatorMarquee />
         <ClientMarquee />
-
       </section>
 
       <section id="about" className="animate-slideUp">
@@ -89,8 +53,6 @@ export default function Home() {
       <section id="testimonials" className="animate-slideUp">
         <Testimonials />
       </section>
-
-      <FloatingCalendly />
     </div>
   );
 }

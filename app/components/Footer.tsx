@@ -8,98 +8,111 @@ import Linkedin from "@/public/static/socials/LinkedIn.png";
 import Logo from "@/public/static/logo_no_bg.png";
 
 const navItems = [
-  { title: "home", id: "hero" },
-  { title: "about", id: "about" },
-  { title: "work", id: "work" },
-  { title: "services", id: "services" },
-  { title: "testimonials", id: "testimonials" },
+  { title: "Home", path: "/" },
+  { title: "About Us", path: "/about" },
+  { title: "Contact Us", path: "/contact" },
 ];
 
 interface nav {
   title: string;
-  id: string;
+  path: string;
 }
 
 export default function Footer() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <div className="relative z-10 py-6 sm:py-8 md:py-10 bg-[#101010] w-full">
-      <footer className="font-clash text-white w-full  flex justify-center items-center">
-        <div className="flex flex-col items-center justify-center w-full max-w-[90vw] gap-3 sm:gap-4 md:gap-5">
-          <div className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] h-auto">
-            <Image
-              src={Logo}
-              alt="Team K Logo"
-              className="w-full h-full object-contain"
-              priority
-            />
-          </div>
-          <span className="w-1/2 h-[1px] bg-white"></span>
-
-          {/* Social Icons and Navigation Links */}
-          <div className="flex px-4 sm:px-6 md:px-10 flex-col md:flex-row justify-between w-full items-center md:items-start gap-6 sm:gap-8 md:gap-10 mt-6 sm:mt-8 md:mt-10">
-            {/* Social Media Icons */}
-            <div className="flex gap-4 sm:gap-5 justify-center items-center">
-              <Link href={"https://instagram.com"} target="_blank" className="group">
+    <footer className="bg-[#101010] text-white py-12">
+      <div className="container mx-auto px-4 md:px-8 lg:px-20">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <div className="flex justify-center md:justify-start mb-4">
+              <div className="w-32 h-auto">
                 <Image
-                  src={Instagram}
-                  className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 hover:opacity-95 transition-all duration-200 ease-in-out group-hover:scale-95"
-                  alt="social icon instagram"
-                  height={40}
-                  width={40}
+                  src={Logo}
+                  alt="Team K Logo"
+                  className="w-full h-full object-contain"
+                  priority
                 />
-              </Link>
-              <Link href={"https://linkedin.com"} target="_blank" className="group">
-                <Image
-                  src={Linkedin}
-                  className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 hover:opacity-95 transition-all duration-200 ease-in-out group-hover:scale-95"
-                  alt="social icon linkedin"
-                  height={40}
-                  width={40}
-                />
-              </Link>
-              <Link href={"https://facebook.com"} target="_blank" className="group">
-                <Image
-                  src={Facebook}
-                  className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 hover:opacity-95 transition-all duration-200 ease-in-out group-hover:scale-95"
-                  alt="social icon facebook"
-                  height={40}
-                  width={40}
-                />
-              </Link>
+              </div>
             </div>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-md text-center md:text-left">
+              We create compelling video content that captivates audiences and drives results. 
+              From podcasts to viral shorts, we help brands tell their stories.
+            </p>
+          </div>
 
-            {/* Navigation Links */}
-            <div className="flex gap-3 sm:gap-4 md:gap-5 flex-wrap justify-center">
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-center md:text-left">Quick Links</h3>
+            <ul className="space-y-2 text-center md:text-left">
               {navItems.map((item: nav, index: number) => (
-                <button
-                  key={index}
-                  onClick={() => scrollToSection(item.id)}
-                  className="group hover:opacity-95 transition-all duration-200 ease-in-out hover:scale-95 text-sm sm:text-base md:text-lg"
-                >
-                  {item.title}
-                  <div className="bg-secondary scale-x-0 h-[2px] w-full group-hover:scale-x-100 transition-all duration-300"></div>
-                </button>
+                <li key={index}>
+                  <Link 
+                    href={item.path}
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* Footer Text */}
-          <div className="text-center mt-6 sm:mt-8 md:mt-10">
-            <h2 className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3 text-sm sm:text-base md:text-lg">
-              <span>Proudly created in India.</span>
-              <span>© Team K {new Date().getFullYear()}</span>
-              <span>All Rights Reserved.</span>
-            </h2>
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-center md:text-left">Contact</h3>
+            <div className="space-y-2 text-center md:text-left">
+              <p className="text-gray-400 text-sm">hello@teamk.com</p>
+              <p className="text-gray-400 text-sm">+1 (555) 123-4567</p>
+              <p className="text-gray-400 text-sm">Mumbai, Maharashtra, India</p>
+            </div>
           </div>
         </div>
-      </footer>
-    </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            {/* Copyright */}
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} Team K. All rights reserved.
+              </p>
+            </div>
+
+            {/* Social Media */}
+            <div className="flex space-x-4">
+              <Link href="https://instagram.com" target="_blank" className="group">
+                <Image
+                  src={Instagram}
+                  className="w-5 h-5 hover:opacity-80 transition-opacity duration-200"
+                  alt="Instagram"
+                  height={20}
+                  width={20}
+                />
+              </Link>
+              <Link href="https://linkedin.com" target="_blank" className="group">
+                <Image
+                  src={Linkedin}
+                  className="w-5 h-5 hover:opacity-80 transition-opacity duration-200"
+                  alt="LinkedIn"
+                  height={20}
+                  width={20}
+                />
+              </Link>
+              <Link href="https://facebook.com" target="_blank" className="group">
+                <Image
+                  src={Facebook}
+                  className="w-5 h-5 hover:opacity-80 transition-opacity duration-200"
+                  alt="Facebook"
+                  height={20}
+                  width={20}
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }

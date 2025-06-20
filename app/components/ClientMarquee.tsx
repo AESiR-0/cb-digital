@@ -85,7 +85,7 @@ export default function ClientMarquee() {
         const marquee = marqueeRef.current;
         if (!marquee) return;
 
-        const totalWidth = marquee.scrollWidth;
+        const totalWidth = marquee.scrollWidth - 750;
         const cloneCount = Math.ceil(window.innerWidth / totalWidth);
 
         // Clone children to ensure seamless scrolling
@@ -97,7 +97,7 @@ export default function ClientMarquee() {
 
         // GSAP animation for infinite marquee
         marqueeAnimation.current = gsap.to(marquee, {
-            x: `-=${totalWidth}`,
+            x: `-${totalWidth}px`,
             duration: 100,
             repeat: -1,
             ease: "linear",
@@ -120,7 +120,7 @@ export default function ClientMarquee() {
             {/* Vignette overlays */}
             <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#171717] to-transparent z-10" />
             <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#171717] to-transparent z-10" />
-            
+
             <div className="overflow-hidden inset-0 bg-gradient-to-r w-[60vw] from-secondary-1/2 via-transparent to-secondary"></div>
             <div
                 className="flex space-x-8 lg:space-x-16"

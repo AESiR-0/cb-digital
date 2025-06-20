@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
 import { IconType } from 'react-icons';
+import SectionHeader from "../../SectionHeader";
 
 type StatItem = {
   value: string;
@@ -18,35 +19,21 @@ type MousePosition = {
 
 const statsData: StatItem[] = [
   {
-    value: "2",
-    label: "BILLION+\nFOLLOWERS",
+    value: "9200+",
+    label: "Videos Created",
     elevation: 'base'
   },
   {
-    value: "25",
-    label: "BILLION+\nMONTHLY VIEWS",
+    value: "1.1B+",
+    label: "Monthly Views",
     elevation: 'raised'
   },
   {
-    value: "600M+",
-    label: "Facebook\nfollowers",
+    value: "300+",
+    label: "Relationships Built",
     elevation: 'base'
   },
-  {
-    value: "1.2B+",
-    label: "YouTube\nsubscribers",
-    elevation: 'raised'
-  },
-  {
-    value: "70M+",
-    label: "Instagram\nfollowers",
-    elevation: 'base'
-  },
-  {
-    value: "21",
-    label: "Original content\nin languages",
-    elevation: 'raised'
-  }
+
 ];
 
 export default function ContentStats() {
@@ -69,12 +56,13 @@ export default function ContentStats() {
   };
 
   return (
-    <div className="w-full h-[50vh] py-10 px-4  bg-[#171717] flex flex-col justify-center items-center">
+    <div className="w-full py-20 px-4 bg-[#171717] flex flex-col justify-center items-center">
+      <SectionHeader subtitle="Over The Years" title="Our Journey in Numbers" />
       <div 
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="w-full max-w-7xl  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-10 relative "
+        className="w-full max-w-7xl justify-center flex flex-wrap items-center gap-12 md:gap-24 relative"
       >
         {/* Removed global liquid glass effect */}
         {statsData.map((stat, index) => (

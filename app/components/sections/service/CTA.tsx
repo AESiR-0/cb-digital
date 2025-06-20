@@ -7,11 +7,14 @@ export default function CTA() {
   return (
     <div className="w-screen bg-secondary max-md:border-t max-md:border-t-white py-10 px-5 md:px-20 lg:px-40 flex items-center justify-between flex-col-reverse md:flex-row font-clash">
       <div className="flex flex-col items-start max-md:items-center md:px-10 md:w-1/2 h-full text-center md:text-left font-bold">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold py-4 md:py-10 md:leading-normal ">
-          Let's make something Awesome
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold py-4 md:py-10 md:leading-normal">
+          Join Us
         </h1>
-        <div className="flex  justify-center md:justify-start">
-          <RoundedButton size="xl" section="CTA" text="Start a project!" />
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 md:mb-8 font-normal">
+          Let's make something awesome together
+        </p>
+        <div className="flex justify-center md:justify-start w-full md:w-auto">
+          <RoundedButton size="xl" section="CTA" text="Say Hi!" />
         </div>
       </div>
       <div className="md:w-1/2 md:flex hidden justify-center items-center pt-6 md:pt-0">

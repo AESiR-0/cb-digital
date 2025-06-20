@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import Title from "../Title";
+import SectionHeader from "../SectionHeader";
 import Image from "next/image";
 
 const placeholderLogo = "/static/work/placeholder.png";
@@ -11,8 +11,8 @@ const workContent = [
     category: "Content Creation",
     content: "We create podcasts so captivating, they'll have listeners forgetting they're out of snacks.",
     videos: [
-      "https://www.youtube.com/embed/DE6r3CPzEsY",
-      "https://www.youtube.com/embed/t8woniGx3x0",
+      "https://res.cloudinary.com/dnqkxuume/video/upload/v1750373059/Pocket_fm_lip_sync_h03uur.webm",
+      "https://res.cloudinary.com/dnqkxuume/video/upload/v1750373050/Trailer-_GrowthX_ybg0ac.webm",
       "https://www.youtube.com/embed/un3--vdM4bE",
       "https://www.youtube.com/embed/sH5NelKJhG4",
     ],
@@ -79,18 +79,16 @@ const allVideos = workContent.flatMap(item =>
 export default function OurWork() {
   return (
     <div className="w-ful l bg-primary px-4 sm:px-6 md:px-8 lg:px-20 py-6 sm:py-10">
-      <Title alignment="center" title2="" code="#007bff" title1="Our Work" />
+      <SectionHeader subtitle="Our Portfolio" title="Our Work" />
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
           {allVideos.map((item, idx) => (
             <div key={idx} className="shadow-[0_40_0px_rgba(255,0,0,0.2)] rounded-xl overflow-hidden flex flex-col">
               <div className="relative w-full aspect-video bg-[#010101]">
-                <iframe
+                <video
                   src={item.video}
                   title={`Work Video ${idx + 1}`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                  
                   className="w-full h-full"
                 />
                 {/* Play overlay (optional, for style) */}

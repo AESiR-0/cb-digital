@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "../Carousel";
-import Title from "../Title";
+import SectionHeader from "../SectionHeader";
 
 const content = [
   {
@@ -21,8 +21,8 @@ const content = [
 
 export default function Testimonials() {
   return (
-    <div className="bg-primary rounded-b h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
-      <Title alignment="center" code="#cccccc" title2="" title1="Testimonials" />
+    <div className="bg-primary rounded-b min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <SectionHeader subtitle="Testimonials" title="What Our Clients Say" />
       <div className="w-full max-w-screen-lg mx-auto py-6 sm:py-8 lg:py-10">
         <Carousel section="testimonials" content={content} />
       </div>

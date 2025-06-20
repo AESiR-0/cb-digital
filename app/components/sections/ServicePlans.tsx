@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Title from "../Title";
+import SectionHeader from "../SectionHeader";
 
 const plans = [
     {
@@ -45,9 +45,7 @@ const plans = [
 export default function ServicePlans() {
     return (
         <div className="py-10 px-5 md:px-10 lg:px-20">
-            <div className="text-xl w-full flex justify-center text-center mb-10">
-                <Title alignment="center" code="#FF0000" title1="Content Buffet" title2="" />
-            </div>
+            <SectionHeader subtitle="Our Services" title="Content Buffet" />
             <div className="service-plans grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {plans.map((plan, index) => (
                     <div key={index} className={`flex flex-col items-center p-8 rounded-lg shadow-lg hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] transition-all duration-300 ${index === 1 ? 'rounded-xl border border-[#FF0000] shadow-[0_0_20px_rgba(255,0,0,0.4)]' : ''}`}>

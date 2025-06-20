@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
-import Title from "../Title";
+import SectionHeader from "../SectionHeader";
 
 type Service = {
     name: string[];
@@ -113,8 +113,8 @@ export default function About() {
 
     return (
         <div className=" py-20 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-                <Title alignment="center" title2="" code="#ff9900" title1="Our Services" />
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <SectionHeader subtitle="What We Do" title="Our Services" />
             </div>
 
             <div className="relative w-full">
