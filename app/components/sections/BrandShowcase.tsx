@@ -108,16 +108,16 @@ export default function BrandShowcase() {
 
     return (
         <div className="w-full max-md:hidden min-h-screen bg-[#171717] flex items-center justify-center py-20 px-4 md:px-8 lg:px-20">
-            <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-8 lg:gap-16">
+            <div className="w-full max-w-7xl flex flex-col lg:flex-row  lg:gap-16">
                 {/* Left side - Brand list */}
-                <div className="w-full lg:w-1/3 space-y-6">
+                <div className="w-full lg:w-1/3 ">
                     {brands.map((brand) => (
                         <div
                             key={brand.name}
                             onClick={() => setActiveBrand(brand)}
                             className={`
-                                flex items-center justify-between cursor-pointer
-                                py-4 px-2 border-b border-white/10
+                                flex m-0   justify-between cursor-pointer
+                                py-6 px-2 border-b border-white/10
                                 transition-all duration-300 ease-out
                                 group relative
                                 ${activeBrand.name === brand.name 
@@ -127,14 +127,14 @@ export default function BrandShowcase() {
                         >
                             {/* Background gradient for active state */}
                             <div className={`
-                                absolute inset-0 opacity-0 transition-opacity duration-300
+                                absolute inset-0 opacity-0 h-full m-0  transition-opacity duration-300
                                 bg-gradient-to-r ${brand.activeColor}
                                 ${activeBrand.name === brand.name ? 'opacity-100' : ''}
                             `} />
                             
-                            <div className="flex items-center gap-3 relative z-10">
+                            <div className="flex items-center m-0 gap-3 relative z-10">
                                 <div className={`
-                                    w-2 h-2 rounded-full 
+                                    w-2 h-2 rounded-full  m-0
                                     transition-all duration-300
                                     ${activeBrand.name === brand.name 
                                         ? 'bg-white scale-100' 
@@ -142,7 +142,7 @@ export default function BrandShowcase() {
                                 `} />
                                 <span className="text-lg font-medium">{brand.name}</span>
                             </div>
-                            <span className="text-sm font-light tracking-wider relative z-10">{brand.category}</span>
+                            <span className="text-sm pt-1 font-light  relative z-10">{brand.category}</span>
                         </div>
                     ))}
                 </div>

@@ -6,7 +6,7 @@ import ReactPlayer from "react-player";
 const allVideos = [
   {
     id: "growthx-trailer",
-    title: "GrowthX Trailer",
+    title: "GrowthX",
     videoUrl: "https://res.cloudinary.com/dnqkxuume/video/upload/v1750373050/Trailer-_GrowthX_ybg0ac.webm",
     category: "Podcasts",
     categoryDescription: "We create podcasts so captivating, they'll have listeners forgetting they're out of snacks.",
@@ -15,7 +15,7 @@ const allVideos = [
   },
   {
     id: "aashna-podcast",
-    title: "Aashna Podcast Trailer",
+    title: "The Hub Bengaluru",
     videoUrl: "https://res.cloudinary.com/dnqkxuume/video/upload/v1750790694/Aashna_Podcast_-_Trailer_mwpv4s.webm",
     category: "Podcasts",
     categoryDescription: "We create podcasts so captivating, they'll have listeners forgetting they're out of snacks.",
@@ -42,7 +42,7 @@ const allVideos = [
   },
   {
     id: "amish-intro",
-    title: "Amish Intro",
+    title: "Amish Tripathi",
     videoUrl: "https://res.cloudinary.com/dnqkxuume/video/upload/v1750791427/Amish_Intro_-_Website_ckrezl.webm",
     category: "Shorts & Reels",
     categoryDescription: "We make shorts and reels so good, even your ex might double-tap. Quick, punchy, and scroll-stopping—because who has time for boring?",
@@ -91,7 +91,7 @@ export default function OurWork() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
           {allVideos.map((item, idx) => (
             <div key={item.id} className="shadow-[0_40_0px_rgba(255,0,0,0.2)] rounded-xl overflow-hidden flex flex-col group hover:shadow-[0_40_0px_rgba(255,0,0,0.4)] transition-all duration-300">
-              <div className="relative w-full aspect-video bg-[#010101] overflow-hidden">
+              <div className="relative w-full aspect-video bg-[#171717] overflow-hidden">
                 <ReactPlayer
                   ref={(el: ReactPlayer | null) => { playerRefs.current[item.id] = el; }}
                   url={item.videoUrl}
@@ -108,26 +108,18 @@ export default function OurWork() {
                   controls={true}
                   muted={false}
                 />
-                
+
                 {/* Video Overlay */}
-                
-            
-                
+
+
+
                 {/* Category Badge */}
                 <div className="absolute top-2 left-2 bg-red-500/90 px-2 py-1 rounded text-xs text-white font-medium z-10">
-                  {item.category}
+                  <div className=" text-white text-sm leading-tight ">{item.title}</div>
                 </div>
               </div>
-              
-              <div className="flex items-center gap-3 p-3 bg-[#171717]">
-                <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">{item.category.charAt(0)}</span>
-                </div>
-                <div className="flex-1">
-                  <div className="font-bold text-white text-sm leading-tight mb-1">{item.title}</div>
-                  <div className="text-xs text-gray-400 leading-snug font-medium">{item.categoryDescription}</div>
-                </div>
-              </div>
+
+            
             </div>
           ))}
         </div>

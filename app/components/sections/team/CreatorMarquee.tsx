@@ -193,7 +193,7 @@ function CreatorCard({ creator }: { creator: Creator }) {
             onMouseMove={handleMouseMove}
         >
             <div
-                className="relative w-[280px] h-[350px] rounded-[2rem] overflow-hidden transition-all duration-500 ease-out cursor-pointer"
+                className="relative w-[200px] h-[250px] rounded-[2rem] overflow-hidden transition-all duration-500 ease-out cursor-pointer"
                 style={{
                     transform: isHovered
                         ? `perspective(1000px) 
@@ -233,9 +233,9 @@ function CreatorCard({ creator }: { creator: Creator }) {
                         transition: 'transform 0.5s ease-out'
                     }}
                 >
-                    <h3 className="text-2xl font-bold mb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{creator.name}</h3>
-                    <p className="text-sm text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{creator.handle}</p>
-                    <p className="text-sm text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{creator.subscribers}</p>
+                    <h3 className="text-xl font-bold mb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{creator.name}</h3>
+                    <p className="text-xs text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{creator.handle}</p>
+                    <p className="text-xs text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{creator.subscribers}</p>
                 </div>
 
                 <div

@@ -97,8 +97,8 @@ export default function ClientMarquee() {
 
         // GSAP animation for infinite marquee
         marqueeAnimation.current = gsap.to(marquee, {
-            x: `-${totalWidth}px`,
-            duration: 100,
+            x: `${totalWidth}px`,
+            duration: 250,
             repeat: -1,
             ease: "linear",
         });
@@ -113,7 +113,7 @@ export default function ClientMarquee() {
 
     return (
         <div
-            className="overflow-hidden py-8 px-4 lg:px-20 flex justify-center items-center group relative"
+            className="overflow-hidden py-8 px-4 lg:px-20 flex  justify-center items-center group relative"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >

@@ -34,10 +34,10 @@ export default function Title({
   code = "#FF0000";
   return (
     <h1
-      className={`my-10 text-center font-clash text-[6.5rem] max-md:text-[3.5rem] font-bold max-md:text-left text-${alignment} uppercase animate-slide-up-fade-in`}
+      className={`my-5 text-center font-clash text-[3.75rem] max-md:text-[3.5rem] font-bold max-md:text-left text-${alignment} uppercase animate-slide-up-fade-in`}
     >
       <span
-        className="text-gradient blue inline-block pl-5 pb-1"
+        className="text-gradient blue inline-block pl-5 "
         style={{
           background: `linear-gradient(90deg,${code} 1%, ${hexToRGBA(code || " ")} 1% -2.96%, rgba(105, 114, 222, 0) 97.04%)`,
           backgroundPosition: "0% 0%",
@@ -51,9 +51,8 @@ export default function Title({
       {title2 !== "" &&
         (
           <>
-            <br />
             <span
-              className="text-gradient blue inline-block pl-10 pb-1"
+              className="text-gradient text-[6rem] blue pt- inline-block pl-10 pb-1"
               style={{
                 background: `linear-gradient(90deg,${code} 1%, ${hexToRGBA(code || " ")} 1% -2.96%, rgba(105, 114, 222, 0) 97.04%)`,
                 backgroundPosition: "0% 0%",

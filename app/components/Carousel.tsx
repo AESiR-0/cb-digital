@@ -70,22 +70,22 @@ export default function Carousel({
         {content.map((src, index) => (
           <div
             key={src.title}
-            className="flex-shrink-0 w-full flex flex-col md:gap-10 md:flex-row px-10 md:px-20 justify-between items-center"
+            className="flex-shrink-0   w-full flex flex-col md:gap-10 md:flex-row px-10 md:px-16 justify-between items-center"
           >
-            <div className="w-full md:w-1/2 text-left text-lg md:text-2xl flex flex-col gap-4">
+            <div className="w-full  md:w-1/2 text-left text-lg md:text-2xl flex flex-col ">
               <h1 className="px-2 md:px-5 text-white/90">{src.content}</h1>
               <div className="px-2 md:px-5 mt-2">
                 {renderClientInfo(src.client)}
               </div>
             </div>
             <div className="w-full md:w-1/2 flex justify-center mt-5 md:mt-0">
-              <div className="relative w-[200px] h-[200px] rounded-lg overflow-hidden">
+              <div className="relative w-[250px] h-[250px] rounded-lg overflow-hidden">
                 <Image
                   src={src.image}
                   alt={src.title}
                   fill
-                  className="object-cover"
-                  sizes="200px"
+                  className="object-cover "
+                  sizes="250px"
                 />
               </div>
             </div>
@@ -107,16 +107,6 @@ export default function Carousel({
         &#10095;
       </button>
 
-      {/* Indicator dots */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex space-x-2">
-        {content.map((_, index) => (
-          <div
-            key={index}
-            className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-gray-300"
-              }`}
-          />
-        ))}
-      </div>
     </div>
   );
 }

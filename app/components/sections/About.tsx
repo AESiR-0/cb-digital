@@ -146,7 +146,7 @@ export default function About() {
                                     priority
                                 />
                                 {/* Overlay for readability */}
-                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/200 transition-all duration-300" />
+                                <div className="absolute inset-0 bg-[#171717]/40 group-hover:bg-[#171717]/200 transition-all duration-300" />
                             </div>
                             {/* Content */}
                             <div className="relative z-10 flex flex-col h-full justify-end p-6">

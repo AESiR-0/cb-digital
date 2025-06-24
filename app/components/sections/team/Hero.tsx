@@ -57,7 +57,7 @@ If the story matters, we'll make it binge-worthy.`}
                 </div>
                 
                 {/* Mute Button */}
-                <button className="absolute top-4 right-4 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                <button className="absolute top-4 right-4 w-12 h-12 bg-[#171717]/50 hover:bg-[#171717]/70 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
                   </svg>
@@ -65,7 +65,7 @@ If the story matters, we'll make it binge-worthy.`}
                 </button>
                 
                 {/* Video Label */}
-                <div className="absolute bottom-4 left-4 bg-black/50 hover:bg-black/70 rounded-full px-3 py-1 transition-all duration-300">
+                <div className="absolute bottom-4 left-4 bg-[#171717]/50 hover:bg-[#171717]/70 rounded-full px-3 py-1 transition-all duration-300">
                   <span className="text-white text-sm font-medium">Our Work</span>
                 </div>
               </div>
