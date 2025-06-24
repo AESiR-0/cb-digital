@@ -27,7 +27,7 @@ import AyushWadhwa from "@/public/static/creators/Ayush Wadhwa.png";
 import MeghanaMalkhan from "@/public/static/creators/Meghana Malkhan.png";
 import AmeetParekh from "@/public/static/creators/Ameet Parekh.png";
 import RajivTalreja from "@/public/static/creators/Rajiv Talreja.png";
-import ThinkSchool from "@/public/static/creators/Think School.png";
+import ThinkSchool from "@/public/static/creators/Think School.jpg";
 import DrCuterus from "@/public/static/creators/Dr Cuterus.png";
 import ABDeVilliers from "@/public/static/creators/AB DeVilliers.png";
 import AakashChopra from "@/public/static/creators/Aakash Chopra.png";

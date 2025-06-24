@@ -1,114 +1,131 @@
 "use client"
-import React from "react";
+import React, { useState, useRef } from "react";
 import SectionHeader from "../SectionHeader";
-import Image from "next/image";
+import ReactPlayer from "react-player";
 
-const placeholderLogo = "/static/work/placeholder.png";
-
-const workContent = [
+const allVideos = [
   {
-    title: "Podcasts",
-    category: "Content Creation",
-    content: "We create podcasts so captivating, they'll have listeners forgetting they're out of snacks.",
-    videos: [
-      "https://res.cloudinary.com/dnqkxuume/video/upload/v1750373059/Pocket_fm_lip_sync_h03uur.webm",
-      "https://res.cloudinary.com/dnqkxuume/video/upload/v1750373050/Trailer-_GrowthX_ybg0ac.webm",
-      "https://www.youtube.com/embed/un3--vdM4bE",
-      "https://www.youtube.com/embed/sH5NelKJhG4",
-    ],
-    images: [placeholderLogo],
+    id: "growthx-trailer",
+    title: "GrowthX Trailer",
+    videoUrl: "https://res.cloudinary.com/dnqkxuume/video/upload/v1750373050/Trailer-_GrowthX_ybg0ac.webm",
+    category: "Podcasts",
+    categoryDescription: "We create podcasts so captivating, they'll have listeners forgetting they're out of snacks.",
+    duration: "1:45",
+    views: "8.2K"
   },
   {
-    title: "Shorts & Reels",
-    category: "Social Media",
-    content: "We make shorts and reels so good, even your ex might double-tap. Quick, punchy, and scroll-stopping—because who has time for boring?",
-    images: [
-      "/static/work/placeholder.png",
-      "/static/work/placeholder_3.png",
-      "/static/work/placeholder_2.png",
-    ]
+    id: "aashna-podcast",
+    title: "Aashna Podcast Trailer",
+    videoUrl: "https://res.cloudinary.com/dnqkxuume/video/upload/v1750790694/Aashna_Podcast_-_Trailer_mwpv4s.webm",
+    category: "Podcasts",
+    categoryDescription: "We create podcasts so captivating, they'll have listeners forgetting they're out of snacks.",
+    duration: "3:12",
+    views: "12.5K"
   },
   {
-    title: "Talking Head Videos",
-    category: "Video Production",
-    content: "We turn your talking head videos into 'talk of the town' videos. Because why just talk when you can dazzle?",
-    videos: [
-      "https://www.youtube.com/embed/Xpwb2I66bss",
-      "https://www.youtube.com/embed/h5lpQBsDDZI",
-      "https://www.youtube.com/embed/wsZJyGYXmIs",
-      "https://www.youtube.com/embed/6cq68BcdUdU",
-    ],
-    images: [placeholderLogo],
+    id: "prachyam",
+    title: "Prachyam",
+    videoUrl: "https://res.cloudinary.com/dnqkxuume/video/upload/v1750791574/Prachyam_bic2sz.webm",
+    category: "Podcasts",
+    categoryDescription: "We create podcasts so captivating, they'll have listeners forgetting they're out of snacks.",
+    duration: "2:18",
+    views: "9.8K"
   },
   {
-    title: "Vlogs",
-    category: "Content Creation",
-    content: "We create vlogs that make your life look cooler than it already is. Perfect cuts, eye-catching shots, and just the right amount of 'wow' to keep your audience glued to the screen.",
-    videos: [
-      "https://www.instagram.com/reel/C3K1oDfrUsq/embed",
-      "https://www.instagram.com/reel/C1mzBg1IHRa/embed",
-      "https://www.instagram.com/reel/DAscYgLKT6g/embed",
-      "https://www.instagram.com/reel/CydGmYey9Ml/embed",
-    ],
-    images: [placeholderLogo],
+    id: "growth-school",
+    title: "Growth School",
+    videoUrl: "https://res.cloudinary.com/dnqkxuume/video/upload/v1750791445/Growth_School_qhov8n.webm",
+    category: "Shorts & Reels",
+    categoryDescription: "We make shorts and reels so good, even your ex might double-tap. Quick, punchy, and scroll-stopping—because who has time for boring?",
+    duration: "0:45",
+    views: "25.3K"
   },
   {
-    title: "PM Ads",
-    category: "Advertising",
-    content: "We take your ads and give them the glow-up they deserve. Think less 'skip' and more 'shut up and take my money'.",
-    videos: [
-      "https://www.youtube.com/embed/U6eeTFhkhh4",
-      "https://www.youtube.com/embed/KFt7L0WQmPo",
-      "https://www.youtube.com/embed/cA7IHF3Ar2s",
-      "https://www.youtube.com/embed/WuVB-4OOceY",
-    ],
-    images: [placeholderLogo],
+    id: "amish-intro",
+    title: "Amish Intro",
+    videoUrl: "https://res.cloudinary.com/dnqkxuume/video/upload/v1750791427/Amish_Intro_-_Website_ckrezl.webm",
+    category: "Shorts & Reels",
+    categoryDescription: "We make shorts and reels so good, even your ex might double-tap. Quick, punchy, and scroll-stopping—because who has time for boring?",
+    duration: "1:15",
+    views: "18.7K"
   }
-];
-
-// Flatten all videos with their parent info
-const allVideos = workContent.flatMap(item =>
-  (item.videos || []).map((video, idx) => ({
-    video,
-    title: item.title,
-    description: item.content,
-    logo: item.images && item.images.length > 0 ? item.images[0] : placeholderLogo,
-  }))
-).slice(0, 6); // Limit to 6 items
+].slice(0, 6); // Limit to 6 items
 
 export default function OurWork() {
+  const [playingVideos, setPlayingVideos] = useState<{ [key: string]: boolean }>({});
+  const playerRefs = useRef<{ [key: string]: ReactPlayer | null }>({});
+
+  const handlePlay = (videoId: string) => {
+    console.log('Playing video:', videoId);
+    // Pause all other videos first
+    Object.keys(playingVideos).forEach(id => {
+      if (id !== videoId) {
+        setPlayingVideos(prev => ({ ...prev, [id]: false }));
+      }
+    });
+    setPlayingVideos(prev => ({ ...prev, [videoId]: true }));
+  };
+
+  const handlePause = (videoId: string) => {
+    console.log('Pausing video:', videoId);
+    setPlayingVideos(prev => ({ ...prev, [videoId]: false }));
+  };
+
+  const handleVideoEnded = (videoId: string) => {
+    console.log('Video ended:', videoId);
+    setPlayingVideos(prev => ({ ...prev, [videoId]: false }));
+  };
+
+  const handleError = (videoId: string, error: any) => {
+    console.error('Video error:', videoId, error);
+  };
+
+  const handleReady = (videoId: string) => {
+    console.log('Video ready:', videoId);
+  };
+
   return (
-    <div className="w-ful l bg-primary px-4 sm:px-6 md:px-8 lg:px-20 py-6 sm:py-10">
+    <div className="w-full bg-primary px-4 sm:px-6 md:px-8 lg:px-20 py-6 sm:py-10">
       <SectionHeader subtitle="Our Portfolio" title="Our Work" />
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
           {allVideos.map((item, idx) => (
-            <div key={idx} className="shadow-[0_40_0px_rgba(255,0,0,0.2)] rounded-xl overflow-hidden flex flex-col">
-              <div className="relative w-full aspect-video bg-[#010101]">
-                <video
-                  src={item.video}
-                  title={`Work Video ${idx + 1}`}
-                  
-                  className="w-full h-full"
+            <div key={item.id} className="shadow-[0_40_0px_rgba(255,0,0,0.2)] rounded-xl overflow-hidden flex flex-col group hover:shadow-[0_40_0px_rgba(255,0,0,0.4)] transition-all duration-300">
+              <div className="relative w-full aspect-video bg-[#010101] overflow-hidden">
+                <ReactPlayer
+                  ref={(el: ReactPlayer | null) => { playerRefs.current[item.id] = el; }}
+                  url={item.videoUrl}
+                  playing={playingVideos[item.id]}
+                  width="100%"
+                  height="100%"
+                  style={{ objectFit: 'cover' }}
+                  onPlay={() => handlePlay(item.id)}
+                  onPause={() => handlePause(item.id)}
+                  onEnded={() => handleVideoEnded(item.id)}
+                  onError={(error) => handleError(item.id, error)}
+                  onReady={() => handleReady(item.id)}
+                  loop
+                  controls={true}
+                  muted={false}
                 />
-                {/* Play overlay (optional, for style) */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="#010101"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
+                
+                {/* Video Overlay */}
+                
+            
+                
+                {/* Category Badge */}
+                <div className="absolute top-2 left-2 bg-red-500/90 px-2 py-1 rounded text-xs text-white font-medium z-10">
+                  {item.category}
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-3">
-                <Image
-                  src={item.logo}
-                  alt="Logo"
-                  width={40}
-                  height={40}
-                  className="rounded-full bg-white border border-gray-200 shadow"
-                />
+              
+              <div className="flex items-center gap-3 p-3 bg-[#171717]">
+                <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">{item.category.charAt(0)}</span>
+                </div>
                 <div className="flex-1">
-                  <div className="font-bold text-white text-base leading-tight mb-1">{item.title}</div>
-                  <div className="text-xs leading-snug font-medium">{item.description}</div>
+                  <div className="font-bold text-white text-sm leading-tight mb-1">{item.title}</div>
+                  <div className="text-xs text-gray-400 leading-snug font-medium">{item.categoryDescription}</div>
                 </div>
               </div>
             </div>

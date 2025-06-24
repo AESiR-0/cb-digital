@@ -7,7 +7,7 @@ interface Obj {
   title: string;
   content: string;
   image: string;
-  client: any;
+  client: string;
 }
 
 export default function Carousel({
@@ -43,10 +43,24 @@ export default function Carousel({
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [currentIndex]);
 
+  // Function to render client information with proper styling
+  const renderClientInfo = (client: string) => {
+    const parts = client.split('\n');
+    if (parts.length === 2) {
+      return (
+        <div className="flex flex-col">
+          <span className="text-white font-semibold">{parts[0]}</span>
+          <span className="text-white/60 text-sm font-normal">{parts[1]}</span>
+        </div>
+      );
+    }
+    return <span className="text-white font-semibold">{client}</span>;
+  };
+
   return (
     <div
       {...handlers}
-      className="relative  font-clash text-left w-full  overflow-hidden"
+      className="relative font-clash text-left w-full overflow-hidden"
     >
       {/* Carousel content */}
       <div
@@ -59,21 +73,21 @@ export default function Carousel({
             className="flex-shrink-0 w-full flex flex-col md:gap-10 md:flex-row px-10 md:px-20 justify-between items-center"
           >
             <div className="w-full md:w-1/2 text-left text-lg md:text-2xl flex flex-col gap-4">
-              <h1 className="px-2 md:px-5">{src.content}</h1>
-              <h2 className="text-base md:text-xl px-2 md:px-5 mt-2">
-                - {src.client}
-              </h2>
+              <h1 className="px-2 md:px-5 text-white/90">{src.content}</h1>
+              <div className="px-2 md:px-5 mt-2">
+                {renderClientInfo(src.client)}
+              </div>
             </div>
             <div className="w-full md:w-1/2 flex justify-center mt-5 md:mt-0">
-              <Image
-                src={src.image}
-                alt={src.title}
-                height={400}
-                width={400}
-                objectFit="cover"
-                className="rounded-lg"
-                style={{ maxHeight: '100%', width: 'auto' }}
-              />
+              <div className="relative w-[200px] h-[200px] rounded-lg overflow-hidden">
+                <Image
+                  src={src.image}
+                  alt={src.title}
+                  fill
+                  className="object-cover"
+                  sizes="200px"
+                />
+              </div>
             </div>
           </div>
         ))}
@@ -94,7 +108,7 @@ export default function Carousel({
       </button>
 
       {/* Indicator dots */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex space-x-2">
         {content.map((_, index) => (
           <div
             key={index}
