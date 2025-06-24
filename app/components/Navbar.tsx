@@ -33,7 +33,7 @@ export const Navbar = () => {
     <>
       {/* Fixed Navbar with Glass Background */}
       <div className="fixed top-0 left-0 right-0 z-[999999] backdrop-blur-md bg-[#171717]/20 border-b border-white/10">
-        <div className="w-screen items-center text-white flex justify-between px-10 ">
+        <div className="w-screen items-center text-white flex justify-between px-10 max-md:px-3">
           {/* Logo */}
           <div className="w-[220px] sm:w-[100px] h-auto cursor-pointer" onClick={() => navigateTo('/')}>
             <Image

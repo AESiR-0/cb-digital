@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${clashDisplay.variable} ${tan.variable}  scroll-smooth h-full relative bg-primary  overflow-x-hidden  antialiased`}
+        className={`${clashDisplay.variable} ${tan.variable} overflow-x-hidden  scroll-smooth h-full relative bg-primary  max-md:overflow-x-hidden  antialiased`}
       >
         <Navbar />
         <div className=" h-full main font-clash relative z-20 bg-primary   text-white  w-full border-b-transparent rounded-b-3xl">
