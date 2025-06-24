@@ -63,7 +63,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Email</h3>
-                    <p className="text-gray-400">hello@teamk.com</p>
+                    <p className="text-gray-400">krishncreates@gmail.com</p>
                   </div>
                 </div>
 
@@ -75,7 +75,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Phone</h3>
-                    <p className="text-gray-400">+1 (555) 123-4567</p>
+                    <p className="text-gray-400">+91 7869794571</p>
                   </div>
                 </div>
 
@@ -88,7 +88,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Location</h3>
-                    <p className="text-gray-400">Mumbai, Maharashtra, India</p>
+                    <p className="text-gray-400">Bhopal, Madhya Pradesh, India</p>
                   </div>
                 </div>
               </div>

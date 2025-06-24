@@ -1,31 +1,97 @@
 import Image from "next/image";
 import kk from "@/public/static/team/kk.png";
+import SectionHeader from "../../SectionHeader";
 
 export default function Team() {
   return (
-    <div className="h-full bg-secondary w-full flex flex-col px-5 md:px-20 lg:px-40 xl:px-80 py-10 items-center">
-      <h1 className="text-center font-thin text-3xl md:text-5xl leading-snug">
-        Meet the person behind <br />
-        <span className="font-bold font-tan">Team K</span>
-      </h1>
-      <div className="flex flex-col items-center mt-10 w-full">
-        {/* KrishnKant Nigam's Section */}
-        <div className="flex flex-col items-center w-full text-center">
-          <h1 className="text-2xl md:text-4xl font-semibold">KrishnKant Nigam</h1>
-          <Image
-            width={350}
-            height={350}
-            src={kk}
-            alt="Team K Founder KrishnKant Nigam"
-            className="rounded-full mt-5"
-          />
-          <h3 className="font-bold text-xl md:text-2xl pt-5">Founder & CEO</h3>
-          <p className="text-base md:text-lg font-thin mt-2 max-w-2xl">
-            With over 5 years of experience in content creation and digital marketing, 
-            KrishnKant has built Team K into a powerhouse of creative excellence. 
-            His vision is to transform how brands connect with their audiences through 
-            compelling video content and strategic storytelling.
-          </p>
+    <div className="w-full bg-[#171717] py-20">
+      <div className="max-w-7xl mx-auto">
+        <SectionHeader subtitle="MEET THE PERSON BEHIND TEAM K" title="" />
+
+        <div className="mt-16 flex justify-center">
+          <div className="max-w-7xl w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8  items-center">
+              {/* Image Section */}
+              <div className="flex justify-center lg:justify-start">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-transparent rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                  <Image
+                    width={500}
+                    height={500}
+                    src={kk}
+                    alt="Team K Founder Krish nKant Nigam"
+                    className="relative rounded-full object-cover shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+
+              {/* Content Section */}
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    Krishn Kant Nigam
+                  </h1>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span className="text-red-400 font-semibold text-lg uppercase tracking-wider">
+                      Founder & CEO
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-xl text-white/70 leading-relaxed">
+                  I, along with my team at Team K, don't follow trends — we create what others try to copy.
+                  We turn raw ideas into scroll-stopping content, build formats from scratch, and scale digital brands with intention.
+                  For us, it's not just about going viral — it's about crafting content that lasts, engages, and drives real growth.</p>
+
+                {/* Social Media Links */}
+                <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
+                  <a
+                    href="https://x.com/_iamk_kk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex flex-col items-center hover:scale-105 transition-transform duration-300"
+                  >
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-red-500/20 transition-colors duration-300 mb-3">
+                      <svg className="w-6 h-6 text-white group-hover:text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                      </svg>
+                    </div>
+                    <div className="text-sm text-white/60 uppercase tracking-wider group-hover:text-red-400 transition-colors duration-300">Twitter</div>
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/_iamk_kk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex flex-col items-center hover:scale-105 transition-transform duration-300"
+                  >
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-red-500/20 transition-colors duration-300 mb-3">
+                      <svg className="w-6 h-6 text-white group-hover:text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                      </svg>
+                    </div>
+                    <div className="text-sm text-white/60 uppercase tracking-wider group-hover:text-red-400 transition-colors duration-300">Instagram</div>
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/krishnkantnigam/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex flex-col items-center hover:scale-105 transition-transform duration-300"
+                  >
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-red-500/20 transition-colors duration-300 mb-3">
+                      <svg className="w-6 h-6 text-white group-hover:text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                      </svg>
+                    </div>
+                    <div className="text-sm text-white/60 uppercase tracking-wider group-hover:text-red-400 transition-colors duration-300">LinkedIn</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

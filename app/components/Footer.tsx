@@ -63,9 +63,9 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-center md:text-left">Contact</h3>
             <div className="space-y-2 text-center md:text-left">
-              <p className="text-gray-400 text-sm">hello@teamk.com</p>
-              <p className="text-gray-400 text-sm">+1 (555) 123-4567</p>
-              <p className="text-gray-400 text-sm">Mumbai, Maharashtra, India</p>
+              <p className="text-gray-400 text-sm">krishncreates@gmail.com</p>
+              <p className="text-gray-400 text-sm">+91 7869794571</p>
+              <p className="text-gray-400 text-sm">Bhopal, Madhya Pradesh, India</p>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function Footer() {
 
             {/* Social Media */}
             <div className="flex space-x-4">
-              <Link href="https://instagram.com" target="_blank" className="group">
+              <Link href="https://www.instagram.com/team_iamk/" target="_blank" className="group">
                 <Image
                   src={Instagram}
                   className="w-5 h-5 hover:opacity-80 transition-opacity duration-200"
@@ -91,7 +91,7 @@ export default function Footer() {
                   width={20}
                 />
               </Link>
-              <Link href="https://linkedin.com" target="_blank" className="group">
+              <Link href="https://www.linkedin.com/company/team-iamk" target="_blank" className="group">
                 <Image
                   src={Linkedin}
                   className="w-5 h-5 hover:opacity-80 transition-opacity duration-200"
@@ -100,15 +100,7 @@ export default function Footer() {
                   width={20}
                 />
               </Link>
-              <Link href="https://facebook.com" target="_blank" className="group">
-                <Image
-                  src={Facebook}
-                  className="w-5 h-5 hover:opacity-80 transition-opacity duration-200"
-                  alt="Facebook"
-                  height={20}
-                  width={20}
-                />
-              </Link>
+          
             </div>
           </div>
         </div>
