@@ -12,6 +12,9 @@
 # env
 .env
 
+# google service account
+team-k-463912-218e1f739f20.json
+
 # next.js
 /.next/
 /out/
