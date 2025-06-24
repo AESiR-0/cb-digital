@@ -47,191 +47,130 @@ const creators: Creator[] = [
     {
         image: ABDeVilliers.src,
         name: "AB De Villiers",
-        handle: "@ABDeVilliers17",
-        subscribers: "2.1M subscribers"
+        handle: "ABD360",
+        subscribers: "574K subscribers"
     },
     {
         image: AnkurWarikoo.src,
         name: "Ankur Warikoo",
-        handle: "@ankurwarikoo",
-        subscribers: "4.2M subscribers"
+        handle: "@warikoo",
+        subscribers: "6.37M subscribers"
     },
     {
         image: AshneerGrover.src,
         name: "Ashneer Grover",
-        handle: "@Ashneer_Grover",
-        subscribers: "920K subscribers"
+        handle: "@ashneer.grover",
+        subscribers: "1.4M followers"
     },
     {
         image: AakashChopra.src,
         name: "Aakash Chopra",
-        handle: "@cricketaakash",
-        subscribers: "3.8M subscribers"
+        handle: "@CricketAakash",
+        subscribers: "5.04M subscribers"
     },
     {
         image: AmishTripathi.src,
         name: "Amish Tripathi",
         handle: "@authoramish",
-        subscribers: "850K subscribers"
+        subscribers: "113K subscribers"
     },
     {
         image: SharanHedge.src,
         name: "Sharan Hegde",
-        handle: "@sharanhegde",
-        subscribers: "1.2M subscribers"
+        handle: "@financewithsharan",
+        subscribers: "3.53M subscribers"
     },
     {
         image: ThinkSchool.src,
         name: "Think School",
         handle: "@ThinkSchool",
-        subscribers: "2.5M subscribers"
+        subscribers: "4.62M subscribers"
     },
     {
         image: DrCuterus.src,
         name: "Dr. Tanaya",
-        handle: "@drcuterus",
-        subscribers: "1.8M subscribers"
-    },
-    {
-        image: KshitijSehrawat.src,
-        name: "Kshitij Sehrawat",
-        handle: "@kshitijsehrawat",
-        subscribers: "750K subscribers"
+        handle: "@dr_cuterus",
+        subscribers: "1.8M followers"
     },
     {
         image: RyanFernando.src,
         name: "Ryan Fernando",
-        handle: "@ryanfernando",
-        subscribers: "680K subscribers"
-    },
-    {
-        image: ShivanshGarg.src,
-        name: "Shivansh Garg",
-        handle: "@shivanshgarg",
-        subscribers: "520K subscribers"
+        handle: "@celebritynutritionistryan",
+        subscribers: "948K subscribers"
     },
     {
         image: HarshGoela.src,
         name: "Harsh Goela",
-        handle: "@harshgoela",
-        subscribers: "890K subscribers"
-    },
-    {
-        image: HimanshuAgrawal.src,
-        name: "Himanshu Agrawal",
-        handle: "@himanshuagrawal",
-        subscribers: "450K subscribers"
+        handle: "@goela",
+        subscribers: "682K subscribers"
     },
     {
         image: DivasGupta.src,
         name: "Divas Gupta",
         handle: "@divasgupta",
-        subscribers: "380K subscribers"
+        subscribers: "1.1M followers"
     },
     {
         image: NeerajArora.src,
         name: "Neeraj Arora",
-        handle: "@neerajarora",
-        subscribers: "620K subscribers"
-    },
-    {
-        image: BijayGautam.src,
-        name: "Bijay Gautam",
-        handle: "@bijaygautam",
-        subscribers: "290K subscribers"
-    },
-    {
-        image: SiddharthRajsekar.src,
-        name: "Siddharth Rajsekar",
-        handle: "@siddharthrajsekar",
-        subscribers: "410K subscribers"
-    },
-    {
-        image: MeghanaDixit.src,
-        name: "Meghana Dixit",
-        handle: "@meghanadixit",
-        subscribers: "340K subscribers"
-    },
-    {
-        image: ShashwatAmrev.src,
-        name: "Shashwat Amrev",
-        handle: "@shashwatamrev",
-        subscribers: "280K subscribers"
-    },
-    {
-        image: ShivangiDesai.src,
-        name: "Shivangi Desai",
-        handle: "@shivangidesai",
-        subscribers: "320K subscribers"
+        handle: "@NeerajArora",
+        subscribers: "876K subscribers"
     },
     {
         image: VishalMalkhan.src,
         name: "Vishal Malkhan",
-        handle: "@vishalmalkhan",
-        subscribers: "260K subscribers"
+        handle: "@Malkansview1",
+        subscribers: "1.07M subscribers"
     },
     {
         image: SnehDesai.src,
         name: "Sneh Desai",
         handle: "@snehdesai",
-        subscribers: "190K subscribers"
+        subscribers: "717K subscribers"
     },
     {
         image: DrYogendraSingh.src,
         name: "Dr. Yogendra Singh",
-        handle: "@dryogendrasingh",
-        subscribers: "420K subscribers"
+        handle: "@dr.yogendrasinghrathorecoach",
+        subscribers: "2.82M subscribers"
     },
     {
         image: VishalChourasia.src,
         name: "Vishal Chourasia",
-        handle: "@vishalchourasia",
-        subscribers: "380K subscribers"
+        handle: "@HyperQuest",
+        subscribers: "1.81M subscribers"
     },
     {
         image: AyushShukla.src,
         name: "Ayush Shukla",
-        handle: "@ayushshukla",
-        subscribers: "240K subscribers"
+        handle: "@ayushshukl.a",
+        subscribers: "200K followers"
     },
     {
         image: MahdiShafei.src,
         name: "Mahdi Shafei",
-        handle: "@mahdishafei",
-        subscribers: "180K subscribers"
+        handle: "@mahdiishafiei",
+        subscribers: "559K followers"
     },
     {
         image: IshanSharma.src,
         name: "Ishan Sharma",
-        handle: "@ishansharma",
-        subscribers: "310K subscribers"
+        handle: "@IshanSharma7390",
+        subscribers: "1.87M subscribers"
     },
     {
         image: AyushWadhwa.src,
         name: "Ayush Wadhwa",
         handle: "@ayushwadhwa",
-        subscribers: "220K subscribers"
-    },
-    {
-        image: MeghanaMalkhan.src,
-        name: "Meghana Malkhan",
-        handle: "@meghanamalkhan",
-        subscribers: "270K subscribers"
-    },
-    {
-        image: AmeetParekh.src,
-        name: "Ameet Parekh",
-        handle: "@ameetparekh",
-        subscribers: "160K subscribers"
+        subscribers: "372K followers"
     },
     {
         image: RajivTalreja.src,
         name: "Rajiv Talreja",
         handle: "@rajivtalreja",
-        subscribers: "330K subscribers"
+        subscribers: "847K followers"
     }
 ];
-
 function CreatorCard({ creator }: { creator: Creator }) {
     const [isHovered, setIsHovered] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
@@ -253,10 +192,10 @@ function CreatorCard({ creator }: { creator: Creator }) {
             onMouseLeave={() => setIsHovered(false)}
             onMouseMove={handleMouseMove}
         >
-            <div 
+            <div
                 className="relative w-[280px] h-[350px] rounded-[2rem] overflow-hidden transition-all duration-500 ease-out cursor-pointer"
                 style={{
-                    transform: isHovered 
+                    transform: isHovered
                         ? `perspective(1000px) 
                            scale(1.05) 
                            rotateX(${mousePosition.y * -10}deg) 
@@ -265,7 +204,7 @@ function CreatorCard({ creator }: { creator: Creator }) {
                     transformStyle: 'preserve-3d'
                 }}
             >
-                <div 
+                <div
                     className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black 
                              transition-opacity duration-500"
                     style={{
@@ -285,11 +224,11 @@ function CreatorCard({ creator }: { creator: Creator }) {
                     />
                 </div>
 
-                <div 
+                <div
                     className="absolute bottom-0 left-0 right-0 p-6 text-white"
                     style={{
-                        transform: isHovered 
-                            ? `translateZ(20px) translateY(-10px)` 
+                        transform: isHovered
+                            ? `translateZ(20px) translateY(-10px)`
                             : 'translateZ(0) translateY(0)',
                         transition: 'transform 0.5s ease-out'
                     }}
@@ -299,7 +238,7 @@ function CreatorCard({ creator }: { creator: Creator }) {
                     <p className="text-sm text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{creator.subscribers}</p>
                 </div>
 
-                <div 
+                <div
                     className="absolute inset-0 pointer-events-none transition-opacity duration-500"
                     style={{
                         background: `radial-gradient(
@@ -329,7 +268,7 @@ export default function CreatorMarquee() {
         const originalWidth = items[0].clientWidth;
         const gap = 32; // 8 * 4 (gap-8 in tailwind)
         const itemFullWidth = originalWidth + gap;
-        
+
         // Clone items
         for (let i = 0; i < itemsToClone; i++) {
             items.forEach(item => {
@@ -362,7 +301,7 @@ export default function CreatorMarquee() {
             const handleMouseEnter = () => {
                 if (animation.current) animation.current.pause();
             };
-            
+
             const handleMouseLeave = () => {
                 if (animation.current) animation.current.play();
             };
@@ -386,10 +325,10 @@ export default function CreatorMarquee() {
                 <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#171717] to-transparent z-10" />
 
                 {/* Slider container */}
-                <div 
+                <div
                     ref={sliderRef}
                     className="flex gap-8 py-8"
-                    style={{ 
+                    style={{
                         willChange: "transform",
                         touchAction: "none"
                     }}
