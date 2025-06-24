@@ -17,7 +17,7 @@ const tan = localFont({
 
 export const metadata: Metadata = {
   title: "Team K ",
-  description: "A media agency that creates professional podcasts.",
+  description: "We don't Overthink, We Overdeliver",
 };
 
 export default function RootLayout({

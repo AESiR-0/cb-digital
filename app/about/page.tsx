@@ -10,7 +10,6 @@ export default function page() {
       <Hero />
       <People />
       <AgencySnapshot />
-      <Testimonials />
       <CTA />
     </>
   );

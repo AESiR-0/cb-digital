@@ -23,7 +23,7 @@ const content = [
   },
   {
     title: "thumbnails made",
-    number: 1111,
+    number: 1000,
     content:
       "Well, this annoys us the most but we still do that to get the clicks! (we're quite good at it)",
   },
