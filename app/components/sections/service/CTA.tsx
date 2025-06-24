@@ -115,7 +115,7 @@ export default function CTA() {
                 </div>
                 
                 {/* Image 6 - Right side of center */}
-                <div className="absolute -right-3 top-1/2 transform -translate-y-1/2 w-40 h-40 rounded-2xl overflow-hidden transform rotate-[8deg] hover:rotate-0 transition-all duration-500 hover:scale-110 hover:z-20 grayscale hover:grayscale-0">
+                <div className="absolute -right-3 top-1/2  -translate-y-1/2 w-40 h-40 rounded-2xl overflow-hidden transform rotate-[8deg] hover:rotate-0 transition-all duration-500 hover:scale-110 hover:z-20 grayscale hover:grayscale-0">
                   <Image
                     src="/static/team/6.jpg"
                     alt="Team member 6"
@@ -126,7 +126,7 @@ export default function CTA() {
                 </div>
                 
                 {/* Image 7 - Left side of center */}
-                <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-36 h-36 rounded-xl overflow-hidden transform rotate-[-15deg] hover:rotate-0 transition-all duration-500 hover:scale-110 hover:z-20 grayscale hover:grayscale-0">
+                <div className="absolute -left-2 top-1/2  -translate-y-1/2 w-36 h-36 rounded-xl overflow-hidden transform rotate-[-15deg] hover:rotate-0 transition-all duration-500 hover:scale-110 hover:z-20 grayscale hover:grayscale-0">
                   <Image
                     src="/static/team/3.jpg"
                     alt="Team member 7"
@@ -137,7 +137,7 @@ export default function CTA() {
                 </div>
                 
                 {/* Image 9 - Floating above center */}
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-28 h-28 rounded-xl overflow-hidden transform rotate-[20deg] hover:rotate-0 transition-all duration-500 hover:scale-110 hover:z-20 grayscale hover:grayscale-0">
+                <div className="absolute -top-8 left-1/2  -translate-x-1/2 w-28 h-28 rounded-xl overflow-hidden transform rotate-[20deg] hover:rotate-0 transition-all duration-500 hover:scale-110 hover:z-20 grayscale hover:grayscale-0">
                   <Image
                     src="/static/team/9.jpg"
                     alt="Team member 9"
