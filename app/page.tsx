@@ -13,7 +13,7 @@ import BrandShowcase from "./components/sections/BrandShowcase";
 
 export default function Home() {
   return (
-    <div className="h-full py-5 main relative z-20 bg- text-white w-full">
+    <div className="h-full py-5 main relative z-20 bg- text-white w-full overflow-x-hidden">
       <section id="hero" className="animate-slideUp">
         <Hero />
       </section>

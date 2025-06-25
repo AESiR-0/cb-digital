@@ -48,6 +48,14 @@ const allVideos = [
     categoryDescription: "We make shorts and reels so good, even your ex might double-tap. Quick, punchy, and scroll-stopping—because who has time for boring?",
     duration: "1:15",
     views: "18.7K"
+
+  },
+  {
+    id: "kuku-fm",
+    title: "Kuku FM",
+    videoUrl: "https://res.cloudinary.com/dnqkxuume/video/upload/v1750888046/YT_-_Lip_sync_hgz2ch.webm",
+    category: "Shorts & Reels",
+    categoryDescription: "We make shorts and reels so good, even your ex might double-tap. Quick, punchy, and scroll-stopping—because who has time for boring?",
   }
 ].slice(0, 6); // Limit to 6 items
 
@@ -85,12 +93,12 @@ export default function OurWork() {
   };
 
   return (
-    <div className="w-full bg-primary px-4 sm:px-6 md:px-8 lg:px-20 py-6 sm:py-10">
+    <div className="w-full bg-primary px-2 sm:px-4 md:px-8 lg:px-20 py-4 sm:py-10 overflow-x-hidden">
       <SectionHeader subtitle="Our Portfolio" title="Our Work" />
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
           {allVideos.map((item, idx) => (
-            <div key={item.id} className="shadow-[0_40_0px_rgba(255,0,0,0.2)] rounded-xl overflow-hidden flex flex-col group hover:shadow-[0_40_0px_rgba(255,0,0,0.4)] transition-all duration-300">
+            <div key={item.id} className="shadow-[0_40_0px_rgba(255,0,0,0.2)] rounded-xl overflow-hidden flex flex-col group hover:shadow-[0_40_0px_rgba(255,0,0,0.4)] transition-all duration-300 w-full">
               <div className="relative w-full aspect-video bg-[#171717] overflow-hidden">
                 <ReactPlayer
                   ref={(el: ReactPlayer | null) => { playerRefs.current[item.id] = el; }}

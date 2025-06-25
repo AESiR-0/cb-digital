@@ -2,20 +2,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { gsap } from "gsap";
-
-// Importing all creator images
-import KshitijSehrawat from "@/public/static/creators/Kshitij Sehrawat.png";
 import RyanFernando from "@/public/static/creators/Ryan Fernando.png";
-import ShivanshGarg from "@/public/static/creators/Shivansh Garg.png";
 import HarshGoela from "@/public/static/creators/Harsh Goela.png";
-import HimanshuAgrawal from "@/public/static/creators/Himanshu Agrawal.png";
+import Amani from "@/public/static/creators/Amani.jpg";
 import DivasGupta from "@/public/static/creators/Divas Gupta.png";
 import NeerajArora from "@/public/static/creators/Neeraj Arora.png";
-import BijayGautam from "@/public/static/creators/Bijay Gautam.png";
-import SiddharthRajsekar from "@/public/static/creators/Siddharth Rajsekar.png";
-import MeghanaDixit from "@/public/static/creators/Meghana Dixit.png";
-import ShashwatAmrev from "@/public/static/creators/Shashwat Amrev.png";
-import ShivangiDesai from "@/public/static/creators/Shivangi Desai.png";
 import VishalMalkhan from "@/public/static/creators/Vishal Malkhan.png";
 import SnehDesai from "@/public/static/creators/Sneh Desai.png";
 import DrYogendraSingh from "@/public/static/creators/Dr Yogendra Singh Rathore.png";
@@ -24,8 +15,6 @@ import AyushShukla from "@/public/static/creators/Ayush Shukla.png";
 import MahdiShafei from "@/public/static/creators/Mahdi Shafei.png";
 import IshanSharma from "@/public/static/creators/Ishan Sharma.png";
 import AyushWadhwa from "@/public/static/creators/Ayush Wadhwa.png";
-import MeghanaMalkhan from "@/public/static/creators/Meghana Malkhan.png";
-import AmeetParekh from "@/public/static/creators/Ameet Parekh.png";
 import RajivTalreja from "@/public/static/creators/Rajiv Talreja.png";
 import ThinkSchool from "@/public/static/creators/Think School.jpg";
 import DrCuterus from "@/public/static/creators/Dr Cuterus.png";
@@ -169,6 +158,12 @@ const creators: Creator[] = [
         name: "Rajiv Talreja",
         handle: "@rajivtalreja",
         subscribers: "847K followers"
+    },
+    {
+        image: Amani.src,
+        name: "Odd.Mkt",
+        handle: "@theonlyamanix",
+        subscribers: "378k Followers"
     }
 ];
 function CreatorCard({ creator }: { creator: Creator }) {
