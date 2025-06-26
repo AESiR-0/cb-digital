@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { gsap } from "gsap";
 import RyanFernando from "@/public/static/creators/Ryan Fernando.png";
 import HarshGoela from "@/public/static/creators/Harsh Goela.png";
-import Amani from "@/public/static/creators/Amani.jpg";
+import Amani from "@/public/static/creators/amani.jpg";
 import DivasGupta from "@/public/static/creators/Divas Gupta.png";
 import NeerajArora from "@/public/static/creators/Neeraj Arora.png";
 import VishalMalkhan from "@/public/static/creators/Vishal Malkhan.png";
