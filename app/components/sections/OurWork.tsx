@@ -51,8 +51,8 @@ const allVideos = [
 
   },
   {
-    id: "kuku-fm",
-    title: "Kuku FM",
+    id: "pocket-fm",
+    title: "Pocket FM",
     videoUrl: "https://res.cloudinary.com/dnqkxuume/video/upload/v1750888046/YT_-_Lip_sync_hgz2ch.webm",
     category: "Shorts & Reels",
     categoryDescription: "We make shorts and reels so good, even your ex might double-tap. Quick, punchy, and scroll-stopping—because who has time for boring?",
