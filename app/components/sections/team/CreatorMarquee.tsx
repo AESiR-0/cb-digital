@@ -162,7 +162,7 @@ const creators: Creator[] = [
     {
         image: Amani.src,
         name: "Odd.Mkt",
-        handle: "@theonlyamanix",
+        handle: "@odd.mktg",
         subscribers: "378k Followers"
     }
 ];
