@@ -31,7 +31,15 @@ const bitmojiAvatars = [
 ];
 
 // Floating Avatar Component with Physics
-const FloatingAvatar = ({ src, index, allAvatars }: { src: string; index: number; allAvatars: React.RefObject<HTMLDivElement>[] }) => {
+const FloatingAvatar = ({
+  src,
+  index,
+  allAvatars,
+}: {
+  src: string;
+  index: number;
+  allAvatars: React.RefObject<HTMLDivElement>[];
+}) => {
   const avatarRef = useRef<HTMLDivElement>(null);
   const size = Math.floor(Math.random() * (150 - 90 + 1)) + 90; // Random size between 90-150
   const zIndex = 100000 + Math.floor(Math.random() * 1000); // Randomize z-index
@@ -45,9 +53,9 @@ const FloatingAvatar = ({ src, index, allAvatars }: { src: string; index: number
     const startY = Math.random() * 80 + 10; // 10vh-90vh
 
     // Set initial position using left/top
-    avatar.style.left = startX + 'vw';
-    avatar.style.top = startY + 'vh';
-    avatar.style.position = 'fixed';
+    avatar.style.left = startX + "vw";
+    avatar.style.top = startY + "vh";
+    avatar.style.position = "fixed";
     avatar.style.zIndex = zIndex.toString();
     avatar.style.width = `${size}px`;
     avatar.style.height = `${size}px`;
@@ -60,8 +68,8 @@ const FloatingAvatar = ({ src, index, allAvatars }: { src: string; index: number
       const elapsed = (now - startTime) / 1000; // seconds
       const strongRepulsion = elapsed < 5; // Stronger for first 5 seconds
 
-      const currentX = parseFloat(avatar.style.left || '0');
-      const currentY = parseFloat(avatar.style.top || '0');
+      const currentX = parseFloat(avatar.style.left || "0");
+      const currentY = parseFloat(avatar.style.top || "0");
 
       // Calculate repulsion from other avatars
       let repulsionX = 0;
@@ -70,12 +78,15 @@ const FloatingAvatar = ({ src, index, allAvatars }: { src: string; index: number
       allAvatars.forEach((otherAvatarRef, otherIndex) => {
         if (otherIndex !== index && otherAvatarRef.current) {
           const otherAvatar = otherAvatarRef.current;
-          const otherX = parseFloat(otherAvatar.style.left || '0');
-          const otherY = parseFloat(otherAvatar.style.top || '0');
+          const otherX = parseFloat(otherAvatar.style.left || "0");
+          const otherY = parseFloat(otherAvatar.style.top || "0");
 
-          const distance = Math.sqrt((currentX - otherX) ** 2 + (currentY - otherY) ** 2);
+          const distance = Math.sqrt(
+            (currentX - otherX) ** 2 + (currentY - otherY) ** 2
+          );
 
-          if (distance < 200) { // Repulsion radius
+          if (distance < 200) {
+            // Repulsion radius
             let force = (200 - distance) / 200; // Stronger when closer
             if (strongRepulsion) force *= 2.5; // Boost repulsion for first 5s
             const angle = Math.atan2(currentY - otherY, currentX - otherX);
@@ -99,8 +110,8 @@ const FloatingAvatar = ({ src, index, allAvatars }: { src: string; index: number
 
       // Animate using GSAP, but update left/top for next calculation
       gsap.to(avatar, {
-        left: newX + 'vw',
-        top: newY + 'vh',
+        left: newX + "vw",
+        top: newY + "vh",
         rotation: newRotation,
         duration: duration,
         ease: "power2.inOut",
@@ -126,7 +137,7 @@ const FloatingAvatar = ({ src, index, allAvatars }: { src: string; index: number
     <div
       ref={avatarRef}
       className="pointer-events-none"
-    // style is set in effect
+      // style is set in effect
     >
       <div className="relative w-full h-full">
         {/* Glow effect */}
@@ -151,13 +162,15 @@ export default function Hero() {
 
   // Initialize refs for all avatars
   useEffect(() => {
-    avatarRefs.current = bitmojiAvatars.map(() => React.createRef<HTMLDivElement>());
+    avatarRefs.current = bitmojiAvatars.map(() =>
+      React.createRef<HTMLDivElement>()
+    );
   }, []);
 
   return (
     <div className="w-full min-h-[70vh] relative bg-primary overflow-x-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-[#171717] " />
+      <div className="absolute inset-0 bg-[#00000] " />
       <div className="absolute left-0 bottom-0 w-full h-10 bg-gradient-to-b from-transparent to-primary z-10" />
 
       {/* Floating avatars - positioned relative to viewport */}
@@ -186,12 +199,25 @@ export default function Hero() {
           </div>
 
           {/* CTA Button */}
-          <div className="animate-fade-in-up mb-6 sm:mb-8" style={{ animationDelay: '0.6s' }}>
+          <div
+            className="animate-fade-in-up mb-6 sm:mb-8"
+            style={{ animationDelay: "0.6s" }}
+          >
             <Link href="/contact">
               <button className="group relative inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25">
                 <span className="text-base sm:text-lg">Start Your Journey</span>
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
                 </svg>
                 {/* Button doodles */}
                 <div className="absolute -top-1 sm:-top-2 -right-1 sm:-right-2 w-2 h-2 sm:w-3 sm:h-3 bg-yellow-400 rounded-full animate-bounce"></div>
@@ -201,9 +227,14 @@ export default function Hero() {
           </div>
 
           {/* Scroll indicator - now below CTA */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
+          <div
+            className="animate-fade-in-up"
+            style={{ animationDelay: "0.9s" }}
+          >
             <div className="flex flex-col items-center gap-2">
-              <span className="text-xs sm:text-sm text-white/50 uppercase tracking-wider">Scroll to explore</span>
+              <span className="text-xs sm:text-sm text-white/50 uppercase tracking-wider">
+                Scroll to explore
+              </span>
               <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/30 rounded-full flex justify-center">
                 <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
               </div>
@@ -223,7 +254,7 @@ export default function Hero() {
             transform: translateY(0);
           }
         }
-        
+
         .animate-fade-in-up {
           animation: fade-in-up 1s ease-out forwards;
           opacity: 0;

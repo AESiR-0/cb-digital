@@ -110,7 +110,7 @@ export default function OurWork() {
               key={item.id}
               className="shadow-[0_40_0px_rgba(255,0,0,0.2)] rounded-xl overflow-hidden flex flex-col group hover:shadow-[0_40_0px_rgba(255,0,0,0.4)] transition-all duration-300 w-full"
             >
-              <div className="relative w-full aspect-video bg-[#171717] overflow-hidden">
+              <div className="relative w-full aspect-video bg-[#00000] overflow-hidden">
                 <ReactPlayer
                   ref={(el: ReactPlayer | null) => {
                     playerRefs.current[item.id] = el;

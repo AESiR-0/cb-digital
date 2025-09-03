@@ -111,7 +111,7 @@ export default function BrandShowcase() {
   }, [activeBrand]);
 
   return (
-    <div className="w-full max-md:hidden min-h-screen bg-[#171717] flex items-center justify-center py-20 px-4 md:px-8 lg:px-20">
+    <div className="w-full max-md:hidden min-h-screen bg-[#00000] flex items-center justify-center py-20 px-4 md:px-8 lg:px-20">
       <div className="w-full max-w-7xl flex flex-col lg:flex-row  lg:gap-16">
         {/* Left side - Brand list */}
         <div className="w-full lg:w-1/3 ">

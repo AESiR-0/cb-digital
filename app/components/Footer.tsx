@@ -20,7 +20,7 @@ interface nav {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#101010] text-white py-12">
+    <footer className="bg-[#00000] text-white py-12">
       <div className="container mx-auto px-4 md:px-8 lg:px-20">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -37,18 +37,21 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-md text-center md:text-left">
-              We create compelling video content that captivates audiences and drives results. 
-              From podcasts to viral shorts, we help brands tell their stories.
+              We create compelling video content that captivates audiences and
+              drives results. From podcasts to viral shorts, we help brands tell
+              their stories.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-center md:text-left">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4 text-center md:text-left">
+              Quick Links
+            </h3>
             <ul className="space-y-2 text-center md:text-left">
               {navItems.map((item: nav, index: number) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     href={item.path}
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
@@ -61,11 +64,15 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-center md:text-left">Contact</h3>
+            <h3 className="text-lg font-semibold mb-4 text-center md:text-left">
+              Contact
+            </h3>
             <div className="space-y-2 text-center md:text-left">
               <p className="text-gray-400 text-sm">krishncreates@gmail.com</p>
               <p className="text-gray-400 text-sm">+91 9219194571</p>
-              <p className="text-gray-400 text-sm">Bhopal, Madhya Pradesh, India</p>
+              <p className="text-gray-400 text-sm">
+                Bhopal, Madhya Pradesh, India
+              </p>
             </div>
           </div>
         </div>
@@ -82,7 +89,11 @@ export default function Footer() {
 
             {/* Social Media */}
             <div className="flex space-x-4">
-              <Link href="https://www.instagram.com/team_iamk/" target="_blank" className="group">
+              <Link
+                href="https://www.instagram.com/team_iamk/"
+                target="_blank"
+                className="group"
+              >
                 <Image
                   src={Instagram}
                   className="w-5 h-5 hover:opacity-80 transition-opacity duration-200"
@@ -91,7 +102,11 @@ export default function Footer() {
                   width={20}
                 />
               </Link>
-              <Link href="https://www.linkedin.com/company/team-iamk" target="_blank" className="group">
+              <Link
+                href="https://www.linkedin.com/company/team-iamk"
+                target="_blank"
+                className="group"
+              >
                 <Image
                   src={Linkedin}
                   className="w-5 h-5 hover:opacity-80 transition-opacity duration-200"
@@ -100,7 +115,6 @@ export default function Footer() {
                   width={20}
                 />
               </Link>
-          
             </div>
           </div>
         </div>

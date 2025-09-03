@@ -63,10 +63,10 @@ export default function AgencySnapshot() {
   }, []);
 
   return (
-    <div className="w-full bg-[#171717] py-20 px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-[#00000] py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionHeader subtitle="OUR EXPERIENCE" title="Agency Snapshot" />
-        
+
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {content.map((data, index) => (
             <div key={index} className="text-center group">

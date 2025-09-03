@@ -32,10 +32,13 @@ export const Navbar = () => {
   return (
     <>
       {/* Fixed Navbar with Glass Background */}
-      <div className="fixed top-0 left-0 right-0 z-[999999] backdrop-blur-md bg-[#171717]/20 border-b border-white/10">
+      <div className="fixed top-0 left-0 right-0 z-[999999] backdrop-blur-md bg-[#00000]/20 border-b border-white/10">
         <div className="w-screen items-center text-white flex justify-between px-10 max-md:px-3">
           {/* Logo */}
-          <div className="w-[220px] sm:w-[100px] max-md:w-[150px] h-auto cursor-pointer" onClick={() => navigateTo('/')}>
+          <div
+            className="w-[220px] sm:w-[100px] max-md:w-[150px] h-auto cursor-pointer"
+            onClick={() => navigateTo("/")}
+          >
             <Image
               src={Logo}
               alt="Team K Logo"
@@ -72,14 +75,14 @@ export const Navbar = () => {
               <button
                 key={index}
                 onClick={() => navigateTo(item.path)}
-                className={`uppercase tracking-wider text-sm hover:text-red-500 lg:text-base ${pathName === item.path ? 'text-red-500' : 'text-white'
-                  }`}
+                className={`uppercase tracking-wider text-sm hover:text-red-500 lg:text-base ${
+                  pathName === item.path ? "text-red-500" : "text-white"
+                }`}
               >
                 {item.title}
               </button>
             ))}
           </div>
-
 
           {/* Schedule a Call Button - CTA Style */}
           <div className="hidden md:block">
@@ -90,8 +93,18 @@ export const Navbar = () => {
               className="group relative inline-flex items-center gap-3 hover:bg-red-600 border-2 border-gray-300 bg-transparent text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25"
             >
               <span className="text-sm">Schedule a Call</span>
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              <svg
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
               </svg>
               {/* Button doodles */}
               <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
@@ -102,13 +115,14 @@ export const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-[#171717]/40 backdrop-blur-md border-t border-white/10 p-4 space-y-2">
+          <div className="md:hidden bg-[#00000]/40 backdrop-blur-md border-t border-white/10 p-4 space-y-2">
             {navItems.map((item: NavItem, index) => (
               <button
                 key={index}
                 onClick={() => navigateTo(item.path)}
-                className={`block transition duration-200 hover:scale-95 w-full text-left uppercase tracking-wider text-sm ${pathName === item.path ? 'text-red-400' : 'text-white/80'
-                  }`}
+                className={`block transition duration-200 hover:scale-95 w-full text-left uppercase tracking-wider text-sm ${
+                  pathName === item.path ? "text-red-400" : "text-white/80"
+                }`}
               >
                 {item.title}
               </button>
@@ -120,8 +134,18 @@ export const Navbar = () => {
               className="group relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold text-sm rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25 mt-4"
             >
               <span>Schedule a Call</span>
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              <svg
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
               </svg>
               {/* Button doodles */}
               <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
