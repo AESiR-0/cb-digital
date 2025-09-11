@@ -324,8 +324,8 @@ export default function CreatorMarquee() {
     <div className="w-full bg-[#00000] overflow-hidden py-20">
       <div className="relative w-full">
         {/* Gradient overlays */}
-        <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#171717] to-transparent z-10" />
-        <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#171717] to-transparent z-10" />
+        <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#000000] to-transparent z-10" />
+        <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#000000] to-transparent z-10" />
 
         {/* Slider container */}
         <div

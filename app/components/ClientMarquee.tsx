@@ -118,8 +118,8 @@ export default function ClientMarquee() {
             onMouseLeave={handleMouseLeave}
         >
             {/* Vignette overlays */}
-            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#171717] to-transparent z-10" />
-            <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#171717] to-transparent z-10" />
+            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#000000] to-transparent z-10" />
+            <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#000000] to-transparent z-10" />
 
             <div className="overflow-hidden inset-0 bg-gradient-to-r w-[60vw] from-secondary-1/2 via-transparent to-secondary"></div>
             <div
