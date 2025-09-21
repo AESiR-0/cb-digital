@@ -7,7 +7,6 @@ import { useSwipeable } from "react-swipeable";
 const allVideos = [
   {
     id: "growthx-trailer",
-    title: "Sports",
     videoUrl: "https://pratt-css.com/TeamK/Vertical/Ep 01 - Sports F1.webm",
     category: "Podcasts",
     categoryDescription:
@@ -17,7 +16,6 @@ const allVideos = [
   },
   {
     id: "aashna-podcast",
-    title: "Red Bull Racing - Built to Win",
     videoUrl:
       "https://pratt-css.com/TeamK/Vertical/Ep 02 - Red Bull Racing - Built to Win.webm",
     category: "Podcasts",
@@ -28,7 +26,6 @@ const allVideos = [
   },
   {
     id: "prachyam",
-    title: "Mercedes - Built from Precision",
     videoUrl:`https://pratt-css.com/TeamK/Vertical/Ep3.webm`,
     category: "Podcasts",
     categoryDescription:
@@ -38,7 +35,6 @@ const allVideos = [
   },
   {
     id: "growth-school",
-    title: "Growth School",
     videoUrl: "https://pratt-css.com/TeamK/Vertical/Ep 04 - Ferrari - Built from Blood.webm",
     category: "Shorts & Reels",
     categoryDescription:
@@ -48,7 +44,6 @@ const allVideos = [
   },
   {
     id: "amish-intro",
-    title: "Amish Tripathi",
     videoUrl: "https://pratt-css.com/TeamK/Vertical/Ep5.webm",
     category: "Shorts & Reels",
     categoryDescription:
@@ -58,7 +53,6 @@ const allVideos = [
   },
   {
     id: "kuku-fm",
-    title: "Kuku FM",
     videoUrl: "https://pratt-css.com/TeamK/Vertical/Ep6.webm",
     category: "Shorts & Reels",
     categoryDescription:
@@ -197,12 +191,7 @@ export default function OurWork() {
                           </button>
                         )}
 
-                        {/* Category Badge */}
-                        <div className="absolute top-2 left-2 bg-red-500/90 px-2 py-1 rounded text-xs text-white font-medium z-10">
-                          <div className="text-white text-sm leading-tight">
-                            {item.title}
-                          </div>
-                        </div>
+                        
                       </div>
                     </div>
                   </div>
