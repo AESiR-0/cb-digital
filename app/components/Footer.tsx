@@ -69,7 +69,7 @@ export default function Footer() {
             </h3>
             <div className="space-y-2 text-center md:text-left">
               <p className="text-gray-400 text-sm">krishncreates@gmail.com</p>
-              <p className="text-gray-400 text-sm">+91 9219194571</p>
+              <p className="text-gray-400 text-sm">+91 78693 74571</p>
               <p className="text-gray-400 text-sm">
                 Bhopal, Madhya Pradesh, India
               </p>
